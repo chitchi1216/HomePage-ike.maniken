@@ -709,11 +709,12 @@
     <div class="service-card c3">
       <div class="card-header">
         <div class="card-num">03</div>
-        <h3>コンプライアンス自動監査サービス<small>Waste Compliance Auto-Audit</small></h3>
+        <h3>コンプライアンス自動監査サービス<small>Waste Compliance Auto-Audit / JWNET EDI対応</small></h3>
       </div>
       <div class="card-body">
         <p class="desc">
           マニフェスト情報・委託契約書を読み込み、廃掃法や関連政令・省令との整合性をAIが即時チェック。法改正があれば自動で差分通知を行い、排出事業者の管理責任をサポート。書誌データベースから関連ガイドラインや通知も横断検索し、根拠資料を付けて報告する。
+          JWNETの新仕様（再資源化等情報・EDI機能番号1501/1601/2001等）に対応し、基準重量・処分業者情報・処分方法コード・処理後物情報（D62レイアウト・52項目）の記載妥当性も自動検証する。
         </p>
         <div class="data-row">
           <div class="data-row-label">使用データセット</div>
@@ -721,6 +722,7 @@
             <span class="tag primary">⑧ e-Gov法令検索</span>
             <span class="tag primary">② 国会図書館書誌</span>
             <span class="tag primary">⑤ J-STAGE</span>
+            <span class="tag primary">JWNET EDI仕様書</span>
           </div>
         </div>
         <div class="meta-row">
@@ -730,7 +732,7 @@
           </div>
           <div class="meta-item">
             <div class="meta-label">提供価値</div>
-            <div class="meta-value">法令違反リスクの早期発見、監査工数の大幅削減</div>
+            <div class="meta-value">法令違反リスクの早期発見、監査工数の大幅削減、新EDI仕様への準拠確認</div>
           </div>
         </div>
       </div>
@@ -745,10 +747,11 @@
             <div class="flow-col">
               <div class="flow-phase-label">INPUT</div>
               <div class="flow-box-group">
-                <div class="flow-box source">マニフェスト<br><small>電子/紙データ取込</small></div>
+                <div class="flow-box source">電子マニフェスト<br><small>JWNET EDI取込（新仕様対応）</small></div>
                 <div class="flow-box source">委託契約書<br><small>PDF/画像OCR処理</small></div>
                 <div class="flow-box source">e-Gov法令<br><small>廃掃法・政省令</small></div>
                 <div class="flow-box source">国会図書館書誌<br><small>通知・ガイドライン</small></div>
+                <div class="flow-box source">JWNET EDI仕様書<br><small>D60-D65/R60-R65レイアウト</small></div>
               </div>
             </div>
             <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
@@ -758,6 +761,7 @@
                 <div class="flow-box process">文書構造解析<br><small>NLPで条項抽出</small></div>
                 <div class="flow-box process">法令ルールDB照合<br><small>条文×契約条件マッチ</small></div>
                 <div class="flow-box process">法改正差分検知<br><small>日次クロール&amp;通知</small></div>
+                <div class="flow-box process">新EDI項目検証<br><small>基準重量×処分量×処理後物の整合性</small></div>
               </div>
             </div>
             <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
@@ -767,6 +771,7 @@
                 <div class="flow-box output">監査レポート<br><small>指摘事項＋根拠条文</small></div>
                 <div class="flow-box output">リスクスコア<br><small>契約・マニフェスト別</small></div>
                 <div class="flow-box output">改正アラート<br><small>影響範囲の自動特定</small></div>
+                <div class="flow-box output">EDI準拠チェック表<br><small>新設52項目の充足率レポート</small></div>
               </div>
             </div>
             <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
@@ -775,6 +780,7 @@
               <div class="flow-box-group">
                 <div class="flow-box value">行政処分の未然防止<br><small>排出者責任の確実な履行</small></div>
                 <div class="flow-box value">監査業務の自動化<br><small>年次監査→常時監視</small></div>
+                <div class="flow-box value">2027年JWNET更新対応<br><small>新仕様移行の無停止継続</small></div>
               </div>
             </div>
           </div>
@@ -801,12 +807,19 @@
               <div class="benefit-desc">e-Govの法令更新を日次でクロールし、既存契約への影響を自動分析。「この契約書は改正後の基準に適合していない」といった具体的な指摘と修正案を提示。</div>
               <span class="benefit-metric">想定効果：改正対応リードタイム 1日以内</span>
             </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">📋</div>
+              <div class="benefit-title">JWNET新仕様への自動適合</div>
+              <div class="benefit-desc">廃止される機能番号1500/1600/2000から新設の1501/1601/2001/1700/3102/3202への移行を自動サポート。基準重量（受入量のkg換算）・処分業者情報（許可番号・住所・電話）・処分方法コード（3桁×最大4つ）・処理後物情報（再資源化物・処理残さの種類コード4階層と量）の計52項目（D62レイアウト）に対応した記載チェックリストをリアルタイムで生成する。</div>
+              <span class="benefit-metric">対応項目：新規52項目（D62レイアウト準拠）</span>
+            </div>
           </div>
         </div>
 
         <div class="use-case">
           <div class="use-case-label">具体的な利用シーン</div>
           <p>建設会社B社が保有する50件の廃棄物委託契約書をアップロード。AIが3件の契約書で「処分場所の記載がない」「許可証の有効期限切れ」を検出し、該当条文と修正テンプレートをレポート出力。さらに来月施行の施行令改正が2件の契約に影響することも併せて通知。</p>
+          <p>2027年JWNETサーバー更新を控えた製造業C社では、電子マニフェストの「基準重量」「処分方法コード」「再資源化等情報（D62形式・52項目）」の記載状況を一括スキャン。未記入47件と処分業者情報の不備12件を自動抽出し、EDI仕様書（機能番号1501/1601）に基づいた是正ガイドを即時出力。</p>
         </div>
       </div>
     </div>
