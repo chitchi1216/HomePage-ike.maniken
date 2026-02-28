@@ -69,6 +69,33 @@
       color: #555;
       margin-top: 0.5rem;
     }
+    .history {
+      margin-top: 2.5rem;
+      width: 100%;
+      max-width: 480px;
+    }
+    .history-title {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: #555;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+    .history-list {
+      list-style: none;
+      border-left: 1px solid #2a2a2a;
+      padding-left: 1rem;
+    }
+    .history-list li {
+      font-size: 0.78rem;
+      color: #666;
+      line-height: 1.6;
+      padding: 0.3rem 0;
+    }
+    .history-list li time {
+      color: #555;
+      margin-right: 0.5rem;
+    }
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -94,6 +121,13 @@
         <span class="date">2026.02.28</span>
       </a>
     </nav>
+    <div class="history">
+      <p class="history-title">更新履歴</p>
+      <ul class="history-list">
+        <li><time>2026.02.28</time>電子マニフェスト新仕様（JWNET EDI項目追加）対応 — Service 03 にJWNET再資源化等情報・D62レイアウト（52項目）・新EDI機能番号（1501/1601/2001等）を反映</li>
+        <li><time>2026.02.27</time>初版公開</li>
+      </ul>
+    </div>
   </main>
   <footer>&copy; 2025 Kentaro Maniwa. All rights reserved.</footer>
 </body>
