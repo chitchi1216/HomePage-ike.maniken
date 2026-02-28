@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>資源と人を未来につなぐには？｜データマッシュアップ構想（No.1-10）</title>
+  <meta name="description" content="ColBase / NDL / 国土数値情報 / e-Stat / J-STAGE / 気象庁 / J-PlatPat / e-Gov / 基盤地図情報 / 文化遺産オンライン を統合したサービス構想 1〜10 のインフォグラフィック。" />
+  <style>
+    :root{
+      --bg0:#0b1020; --bg1:#0f1630; --card:#111a34cc;
+      --stroke:#2a3766; --text:#e9ecff; --muted:#b9c2ffcc;
+      --chip:#1a2550; --good:#7dffa6; --warn:#ffd37d;
+      --accent:#7aa2ff; --accent2:#a77bff;
+      --shadow: 0 16px 40px rgba(0,0,0,.35); --radius: 22px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+        "Hiragino Kaku Gothic ProN","Noto Sans JP","Meiryo",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 10% 15%, rgba(122,162,255,.18), transparent 60%),
+        radial-gradient(900px 600px at 85% 20%, rgba(167,123,255,.14), transparent 60%),
+        radial-gradient(900px 700px at 40% 95%, rgba(125,255,166,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      min-height:100vh;
+    }
+    header{padding:42px 18px 22px;max-width:1180px;margin:0 auto;}
+    .kicker{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:8px 12px;border:1px solid var(--stroke);
+      background:rgba(17,26,52,.55);border-radius:999px;
+      color:var(--muted);font-size:13px;letter-spacing:.04em;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 0 0 4px rgba(122,162,255,.12);
+    }
+    h1{margin:16px 0 8px;font-size:clamp(26px, 4vw, 44px);line-height:1.08;letter-spacing:-.02em;}
+    .sub{margin:0;color:var(--muted);font-size:clamp(14px, 1.4vw, 16px);line-height:1.65;max-width:80ch;}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+    .chip{
+      display:inline-flex;align-items:center;gap:8px;padding:8px 10px;
+      border:1px solid var(--stroke);background:rgba(26,37,80,.35);
+      border-radius:999px;font-size:12px;color:var(--muted);white-space:nowrap;
+    }
+    main{max-width:1180px;margin:0 auto;padding:12px 18px 64px;}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:18px;}
+    .card{
+      grid-column:span 6;
+      background:linear-gradient(180deg, rgba(17,26,52,.72), rgba(17,26,52,.45));
+      border:1px solid rgba(42,55,102,.75);border-radius:var(--radius);
+      box-shadow:var(--shadow);overflow:hidden;position:relative;
+    }
+    .card::before{
+      content:"";position:absolute;inset:0;
+      background:
+        radial-gradient(650px 320px at 12% 0%, rgba(122,162,255,.20), transparent 60%),
+        radial-gradient(650px 320px at 92% 0%, rgba(167,123,255,.18), transparent 60%);
+      opacity:.65;pointer-events:none;
+    }
+    .card-inner{position:relative;padding:18px 18px 16px;}
+    .top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;}
+    .n{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:44px;height:44px;border-radius:14px;
+      background:linear-gradient(135deg, rgba(122,162,255,.22), rgba(167,123,255,.20));
+      border:1px solid rgba(122,162,255,.35);
+      font-weight:700;letter-spacing:.02em;flex:0 0 auto;
+    }
+    .title{margin:0;font-size:18px;line-height:1.25;letter-spacing:-.01em;}
+    .value{margin:8px 0 0;color:var(--muted);font-size:13px;line-height:1.65;}
+    .rows{display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px;}
+    .row{
+      display:flex;gap:10px;align-items:flex-start;padding:10px 10px;
+      border:1px solid rgba(42,55,102,.55);background:rgba(15,22,48,.35);
+      border-radius:16px;
+    }
+    .ico{width:22px;height:22px;flex:0 0 auto;filter:drop-shadow(0 8px 18px rgba(0,0,0,.25));opacity:.95;}
+    .label{font-size:12px;color:var(--muted);margin:0 0 2px;}
+    .text{margin:0;font-size:13px;line-height:1.55;color:var(--text);}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+    .tag{
+      padding:6px 9px;border-radius:999px;border:1px solid rgba(42,55,102,.65);
+      background:rgba(26,37,80,.32);font-size:11px;color:var(--muted);
+    }
+    .footer{
+      margin-top:22px;padding:18px;border:1px solid rgba(42,55,102,.75);
+      border-radius:var(--radius);background:rgba(17,26,52,.55);
+      color:var(--muted);box-shadow:var(--shadow);
+    }
+    .footer strong{color:var(--text)}
+    .legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;padding:8px 10px;
+      border-radius:999px;border:1px solid rgba(42,55,102,.75);
+      background:rgba(15,22,48,.35);font-size:12px;color:var(--muted);
+    }
+    .pill b{color:var(--text)}
+    @media (max-width:980px){.card{grid-column:span 12;}}
+    @media (prefers-reduced-motion:no-preference){.card{transform:translateZ(0);} .card:hover{outline:1px solid rgba(122,162,255,.55);}}
+    @media print{
+      body{background:#fff;color:#111}
+      .card,.footer{box-shadow:none}
+      .card{background:#fff;border-color:#bbb}
+      .card::before{display:none}
+      .row{background:#fff;border-color:#ddd}
+      .chip,.tag,.pill{background:#fff;border-color:#ddd;color:#333}
+      .sub{color:#333}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="kicker"><span class="dot"></span><span>Data Mashup × 廃棄物処理（1〜10）</span></div>
+    <h1>資源と人を未来につなぐには？</h1>
+    <p class="sub">
+      10の公的データソース（文化・書誌・GIS・統計・論文・気象・特許・法令・防災）を統合し、
+      排出事業者への「意思決定支援」と廃棄処理技術の「導入・運用・説明責任」を一気通貫で支えるサービス案。
+    </p>
+    <div class="meta">
+      <span class="chip">統合軸：空間 × 法令 × 技術 × 統計 × 文化 × 気象</span>
+      <span class="chip">成果物：ダッシュボード / 自動レポート / RAG検索 / シミュレーション</span>
+      <span class="chip">狙い：循環インテリジェンス（社内検討用）</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="grid" aria-label="サービス一覧（No.1〜10）">
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="i-map" viewBox="0 0 24 24">
+          <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            d="M9 18l-6 3V6l6-3 6 3 6-3v15l-6 3-6-3zM9 3v15M15 6v15"/>
+        </symbol>
+        <symbol id="i-law" viewBox="0 0 24 24">
+          <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            d="M10 3h4M12 3v6m-7 3h14M7 12l-2 9h14l-2-9"/>
+          <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            d="M9 9l-3 3m9-3l3 3"/>
+        </symbol>
+        <symbol id="i-chart" viewBox="0 0 24 24">
+          <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            d="M4 19V5m0 14h16"/>
+          <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            d="M8 16v-6m4 6V8m4 8v-4"/>
+        </symbol>
+        <symbol id="i-flask" viewBox="0 0 24 24">
+          <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            d="M10 2v6l-5 9a3 3 0 0 0 3 5h8a3 3 0 0 0 3-5l-5-9V2"/>
+          <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            d="M8.5 14h7"/>
+        </symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24">
+          <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            d="M12 2l8 4v6c0 6-4 10-8 10S4 18 4 12V6l8-4z"/>
+          <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            d="M9.5 12l2 2 3.5-4"/>
+        </symbol>
+        <symbol id="i-book" viewBox="0 0 24 24">
+          <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            d="M4 19a2 2 0 0 0 2 2h14V5a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2z"/>
+          <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            d="M6 17h14"/>
+        </symbol>
+        <symbol id="i-bolt" viewBox="0 0 24 24">
+          <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            d="M13 2L4 14h7l-1 8 9-12h-7z"/>
+        </symbol>
+        <symbol id="i-heritage" viewBox="0 0 24 24">
+          <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            d="M12 3l9 5-9 5-9-5 9-5zM5 11v8h14v-8"/>
+          <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            d="M9 19v-5m6 5v-5"/>
+        </symbol>
+        <symbol id="i-radar" viewBox="0 0 24 24">
+          <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            d="M12 22a10 10 0 1 1 10-10"/>
+          <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            d="M12 12l6-6"/>
+          <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            d="M12 2v2m0 16v2m-10-10h2m16 0h2"/>
+        </symbol>
+      </svg>
+
+      <!-- Cards 01-10 -->
+      <!-- 01 -->
+      <article class="card"><div class="card-inner">
+        <div class="top"><div class="n">01</div><div style="flex:1">
+          <h2 class="title">地域循環リスク可視化ダッシュボード</h2>
+          <p class="value">立地×災害×気象×土地利用から、廃棄物管理の“事前リスク”を見える化。</p>
+        </div></div>
+        <div class="rows">
+          <div class="row"><svg class="ico" style="color:var(--accent)"><use href="#i-map"/></svg>
+            <div><p class="label">データ</p><p class="text">国土数値情報 / 基盤地図情報 / e-Stat / 気象庁</p></div></div>
+          <div class="row"><svg class="ico" style="color:var(--good)"><use href="#i-chart"/></svg>
+            <div><p class="label">分析</p><p class="text">GIS統合・時系列解析・将来予測（洪水/猛暑/降雪など）</p></div></div>
+          <div class="row"><svg class="ico" style="color:var(--warn)"><use href="#i-shield"/></svg>
+            <div><p class="label">未来接続</p><p class="text">気候変動適応型の廃棄物運用（BCP・委託計画の先回り）</p></div></div>
+        </div>
+        <div class="tags"><span class="tag">BCP</span><span class="tag">GIS</span><span class="tag">リスクスコア</span></div>
+      </div></article>
+
+      <!-- 02 -->
+      <article class="card"><div class="card-inner">
+        <div class="top"><div class="n">02</div><div style="flex:1">
+          <h2 class="title">法令自動適合チェックAI</h2>
+          <p class="value">契約・運用・新技術導入の“適合性”をRAGで照合し、チェック工数を圧縮。</p>
+        </div></div>
+        <div class="rows">
+          <div class="row"><svg class="ico" style="color:var(--accent)"><use href="#i-law"/></svg>
+            <div><p class="label">データ</p><p class="text">e-Gov法令 / J-PlatPat / J-STAGE</p></div></div>
+          <div class="row"><svg class="ico" style="color:var(--good)"><use href="#i-radar"/></svg>
+            <div><p class="label">分析</p><p class="text">リーガルKG＋RAG（条文・通達・判例要旨・技術要件）</p></div></div>
+          <div class="row"><svg class="ico" style="color:var(--warn)"><use href="#i-shield"/></svg>
+            <div><p class="label">未来接続</p><p class="text">“説明できるコンプライアンス”で監査・社内稟議を高速化</p></div></div>
+        </div>
+        <div class="tags"><span class="tag">RAG</span><span class="tag">契約</span><span class="tag">監査</span></div>
+      </div></article>
+
+      <!-- 03 -->
+      <article class="card"><div class="card-inner">
+        <div class="top"><div class="n">03</div><div style="flex:1">
+          <h2 class="title">排出量予測×社会統計モデル</h2>
+          <p class="value">人口動態・天候・土地利用から排出量を予測し、収集・処理コストを最適化。</p>
+        </div></div>
+        <div class="rows">
+          <div class="row"><svg class="ico" style="color:var(--accent)"><use href="#i-chart"/></svg>
+            <div><p class="label">データ</p><p class="text">e-Stat / 気象庁 / 国土数値情報</p></div></div>
+          <div class="row"><svg class="ico" style="color:var(--good)"><use href="#i-bolt"/></svg>
+            <div><p class="label">分析</p><p class="text">回帰・時系列（LSTM等）・イベント特徴量（猛暑/連休/降雪）</p></div></div>
+          <div class="row"><svg class="ico" style="color:var(--warn)"><use href="#i-shield"/></svg>
+            <div><p class="label">未来接続</p><p class="text">“運用の先読み”でCO₂・残業・欠車を減らす</p></div></div>
+        </div>
+        <div class="tags"><span class="tag">需要予測</span><span class="tag">最適化</span><span class="tag">CO₂削減</span></div>
+      </div></article>
+
+      <!-- 04 -->
+      <article class="card"><div class="card-inner">
+        <div class="top"><div class="n">04</div><div style="flex:1">
+          <h2 class="title">技術トレンド分析レポート</h2>
+          <p class="value">特許×論文で“次に来る処理技術”を定点観測し、投資判断を支援。</p>
+        </div></div>
+        <div class="rows">
+          <div class="row"><svg class="ico" style="color:var(--accent)"><use href="#i-radar"/></svg>
+            <div><p class="label">データ</p><p class="text">J-PlatPat / J-STAGE</p></div></div>
+          <div class="row"><svg class="ico" style="color:var(--good)"><use href="#i-flask"/></svg>
+            <div><p class="label">分析</p><p class="text">トピック抽出・被引用/出願トレンド・競合マップ</p></div></div>
+          <div class="row"><svg class="ico" style="color:var(--warn)"><use href="#i-shield"/></svg>
+            <div><p class="label">未来接続</p><p class="text">“技術負債”を避け、導入の勝ち筋を作る</p></div></div>
+        </div>
+        <div class="tags"><span class="tag">特許分析</span><span class="tag">技術ロードマップ</span><span class="tag">競合</span></div>
+      </div></article>
+
+      <!-- 05 -->
+      <article class="card"><div class="card-inner">
+        <div class="top"><div class="n">05</div><div style="flex:1">
+          <h2 class="title">文化財配慮型 廃棄管理支援</h2>
+          <p class="value">文化財周辺での工事・解体・搬出のリスクを事前に回避（近接判定・配慮事項）。</p>
+        </div></div>
+        <div class="rows">
+          <div class="row"><svg class="ico" style="color:var(--accent)"><use href="#i-heritage"/></svg>
+            <div><p class="label">データ</p><p class="text">ColBase / 文化遺産オンライン / GIS</p></div></div>
+          <div class="row"><svg class="ico" style="color:var(--good)"><use href="#i-map"/></svg>
+            <div><p class="label">分析</p><p class="text">空間照合（バッファ）＋文化財属性（指定種別/年代/管理主体）</p></div></div>
+          <div class="row"><svg class="ico" style="color:var(--warn)"><use href="#i-shield"/></svg>
+            <div><p class="label">未来接続</p><p class="text">“地域の記憶”と“資源循環”の両立（社会受容性の向上）</p></div></div>
+        </div>
+        <div class="tags"><span class="tag">解体</span><span class="tag">合意形成</span><span class="tag">リスク回避</span></div>
+      </div></article>
+
+      <!-- 06 -->
+      <article class="card"><div class="card-inner">
+        <div class="top"><div class="n">06</div><div style="flex:1">
+          <h2 class="title">環境説明責任レポート自動生成</h2>
+          <p class="value">循環実績・CO₂・削減根拠を“説明できる形”で自動整形（社内・株主・監査向け）。</p>
+        </div></div>
+        <div class="rows">
+          <div class="row"><svg class="ico" style="color:var(--accent)"><use href="#i-chart"/></svg>
+            <div><p class="label">データ</p><p class="text">e-Stat / 気象庁 / J-STAGE（係数・根拠文献）</p></div></div>
+          <div class="row"><svg class="ico" style="color:var(--good)"><use href="#i-book"/></svg>
+            <div><p class="label">分析</p><p class="text">指標自動計算＋生成（根拠リンク／注意書き／前提条件）</p></div></div>
+          <div class="row"><svg class="ico" style="color:var(--warn)"><use href="#i-shield"/></svg>
+            <div><p class="label">未来接続</p><p class="text">ESGの“報告コスト”を下げて、改善サイクルに投資できる</p></div></div>
+        </div>
+        <div class="tags"><span class="tag">ESG</span><span class="tag">開示</span><span class="tag">監査対応</span></div>
+      </div></article>
+
+      <!-- 07 -->
+      <article class="card"><div class="card-inner">
+        <div class="top"><div class="n">07</div><div style="flex:1">
+          <h2 class="title">災害廃棄物 即応支援</h2>
+          <p class="value">発災時に“量の見立て”と“仮置場候補”を即時提示し、初動を速くする。</p>
+        </div></div>
+        <div class="rows">
+          <div class="row"><svg class="ico" style="color:var(--accent)"><use href="#i-map"/></svg>
+            <div><p class="label">データ</p><p class="text">基盤地図情報 / 気象庁（警報・降雨）</p></div></div>
+          <div class="row"><svg class="ico" style="color:var(--good)"><use href="#i-bolt"/></svg>
+            <div><p class="label">分析</p><p class="text">被害推計×道路/地形条件×搬入導線（到達性）</p></div></div>
+          <div class="row"><svg class="ico" style="color:var(--warn)"><use href="#i-shield"/></svg>
+            <div><p class="label">未来接続</p><p class="text">レジリエンス（自治体・事業者の連携強化）</p></div></div>
+        </div>
+        <div class="tags"><span class="tag">初動</span><span class="tag">仮置場</span><span class="tag">到達性</span></div>
+      </div></article>
+
+      <!-- 08 -->
+      <article class="card"><div class="card-inner">
+        <div class="top"><div class="n">08</div><div style="flex:1">
+          <h2 class="title">書誌×研究 ナレッジ検索（RAG）</h2>
+          <p class="value">廃棄物・資源循環の文献探索を“実務に刺さる”形で検索・要約。</p>
+        </div></div>
+        <div class="rows">
+          <div class="row"><svg class="ico" style="color:var(--accent)"><use href="#i-book"/></svg>
+            <div><p class="label">データ</p><p class="text">国会図書館書誌 / J-STAGE</p></div></div>
+          <div class="row"><svg class="ico" style="color:var(--good)"><use href="#i-radar"/></svg>
+            <div><p class="label">分析</p><p class="text">RAG検索・推薦（テーマ/地域/業種/処理方式で絞り込み）</p></div></div>
+          <div class="row"><svg class="ico" style="color:var(--warn)"><use href="#i-shield"/></svg>
+            <div><p class="label">未来接続</p><p class="text">“知識の属人化”を減らし、現場の学習速度を上げる</p></div></div>
+        </div>
+        <div class="tags"><span class="tag">検索</span><span class="tag">教育</span><span class="tag">推薦</span></div>
+      </div></article>
+
+      <!-- 09 -->
+      <article class="card"><div class="card-inner">
+        <div class="top"><div class="n">09</div><div style="flex:1">
+          <h2 class="title">地域産業×廃棄特性 分析</h2>
+          <p class="value">地域の産業構造と廃棄物特性を接続し、“地域循環の打ち手”を設計。</p>
+        </div></div>
+        <div class="rows">
+          <div class="row"><svg class="ico" style="color:var(--accent)"><use href="#i-chart"/></svg>
+            <div><p class="label">データ</p><p class="text">e-Stat / 国土数値情報（用途地域等）</p></div></div>
+          <div class="row"><svg class="ico" style="color:var(--good)"><use href="#i-flask"/></svg>
+            <div><p class="label">分析</p><p class="text">クラスタリング・産業分類連携・地域別ベンチマーク</p></div></div>
+          <div class="row"><svg class="ico" style="color:var(--warn)"><use href="#i-shield"/></svg>
+            <div><p class="label">未来接続</p><p class="text">“地域循環経済”の設計図（重点業種×重点品目）</p></div></div>
+        </div>
+        <div class="tags"><span class="tag">地域戦略</span><span class="tag">ベンチマーク</span><span class="tag">資源循環</span></div>
+      </div></article>
+
+      <!-- 10 -->
+      <article class="card"><div class="card-inner">
+        <div class="top"><div class="n">10</div><div style="flex:1">
+          <h2 class="title">未来循環都市シミュレーター</h2>
+          <p class="value">CO₂・循環率・コストを“シナリオ”で比較し、投資と運用の意思決定を支援。</p>
+        </div></div>
+        <div class="rows">
+          <div class="row"><svg class="ico" style="color:var(--accent)"><use href="#i-radar"/></svg>
+            <div><p class="label">データ</p><p class="text">1〜9の統合（統計/気象/GIS/法令/技術/文化）</p></div></div>
+          <div class="row"><svg class="ico" style="color:var(--good)"><use href="#i-bolt"/></svg>
+            <div><p class="label">分析</p><p class="text">システムダイナミクス／シナリオ比較（政策・設備・運用）</p></div></div>
+          <div class="row"><svg class="ico" style="color:var(--warn)"><use href="#i-shield"/></svg>
+            <div><p class="label">未来接続</p><p class="text">“選べる未来”を定量化し、合意形成を前に進める</p></div></div>
+        </div>
+        <div class="tags"><span class="tag">シナリオ</span><span class="tag">投資判断</span><span class="tag">合意形成</span></div>
+      </div></article>
+
+    </section>
+
+    <section class="footer" aria-label="まとめ">
+      <strong>まとめ：</strong>
+      この10案は、処理の効率化だけでなく「説明責任（法・ESG）」「レジリエンス（災害・気候）」「地域価値（文化・産業）」まで含めて、
+      廃棄物を<strong>“社会の代謝情報”</strong>として扱う設計です。
+      社内検討では、①No.1（リスク可視化）×②No.6（説明責任レポート）をコアにし、
+      No.2（法令）・No.3（予測）を足場として広げる構成が最短距離です。
+      <div class="legend">
+        <span class="pill"><b>導入順の推奨</b>：No.1 → No.6 → No.2/3 → No.4/8 → No.10</span>
+        <span class="pill"><b>提供形態</b>：社内ポータル / 顧客向けWeb / PDF自動出力</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

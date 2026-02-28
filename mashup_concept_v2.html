@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>資源と人を未来につなぐ — データマッシュアップ構想 v2</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #f0f4f3;
+    color: #1a2a2a;
+    padding: 2rem 1.5rem;
+    line-height: 1.7;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .header .label {
+    display: inline-block;
+    background: linear-gradient(135deg, #0d7c5f, #34a87a);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    padding: 0.35rem 1.2rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+  .header h1 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #0d3d30;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+  .header h1 span {
+    background: linear-gradient(90deg, #0d7c5f, #2da87a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .header p.subtitle {
+    font-size: 0.95rem;
+    color: #4a6a60;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .header .author-info {
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #d5e8e0;
+    display: inline-block;
+  }
+  .header .author-info p {
+    font-size: 0.8rem;
+    color: #6a8a80;
+    line-height: 1.8;
+    letter-spacing: 0.03em;
+  }
+
+  /* Vision Statement */
+  .vision {
+    background: linear-gradient(135deg, #0d3d30 0%, #145a48 100%);
+    color: #fff;
+    border-radius: 16px;
+    padding: 2rem 2.5rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+  .vision h2 {
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.8rem;
+    opacity: 0.8;
+  }
+  .vision .concept {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .vision p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    opacity: 0.85;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Service Cards */
+  .services {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .service-card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(13, 61, 48, 0.06);
+    border: 1px solid #e0ece8;
+    transition: box-shadow 0.2s;
+  }
+  .service-card:hover {
+    box-shadow: 0 6px 24px rgba(13, 61, 48, 0.12);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 1.5rem;
+    background: linear-gradient(135deg, #e8f5f0, #f4faf7);
+    border-bottom: 1px solid #d5e8e0;
+  }
+  .card-num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 900;
+    color: #fff;
+  }
+  .card-header h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0d3d30;
+  }
+  .card-header h3 small {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: #6a8a80;
+    margin-top: 2px;
+  }
+
+  .card-body {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .card-body .desc {
+    font-size: 0.85rem;
+    color: #3a5a50;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+  }
+
+  /* Data Tags */
+  .data-row {
+    margin-bottom: 0.8rem;
+  }
+  .data-row-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #0d7c5f;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 100px;
+    font-weight: 500;
+  }
+  .tag.primary {
+    background: #e0f2ec;
+    color: #0d6a50;
+    border: 1px solid #b8ddd0;
+  }
+  .tag.secondary {
+    background: #f0f0f5;
+    color: #555;
+    border: 1px solid #ddd;
+  }
+
+  /* Target / Value */
+  .meta-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.8rem;
+    flex-wrap: wrap;
+  }
+  .meta-item {
+    flex: 1;
+    min-width: 200px;
+    background: #f8faf9;
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    border: 1px solid #e8f0ec;
+  }
+  .meta-item .meta-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+  }
+  .meta-item .meta-value {
+    font-size: 0.8rem;
+    color: #2a4a40;
+    line-height: 1.6;
+  }
+
+  /* Color per card */
+  .c1 .card-num { background: linear-gradient(135deg, #0d7c5f, #2da87a); }
+  .c2 .card-num { background: linear-gradient(135deg, #1a6b8a, #2d9ab0); }
+  .c3 .card-num { background: linear-gradient(135deg, #7c5a0d, #b08a2d); }
+  .c4 .card-num { background: linear-gradient(135deg, #5a0d7c, #8a2db0); }
+  .c5 .card-num { background: linear-gradient(135deg, #7c0d3a, #b02d5a); }
+  .c6 .card-num { background: linear-gradient(135deg, #2a6a3a, #4a9a5a); }
+
+  /* ===== Deep Dive Section (NEW) ===== */
+  .deep-dive {
+    border-top: 1px dashed #d5e8e0;
+    padding: 1.5rem 1.5rem 1.2rem;
+    background: #fcfefD;
+  }
+
+  .deep-dive-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: 100px;
+    margin-bottom: 1.2rem;
+  }
+  .c1 .deep-dive-label { background: linear-gradient(135deg, #0d7c5f, #2da87a); }
+  .c2 .deep-dive-label { background: linear-gradient(135deg, #1a6b8a, #2d9ab0); }
+  .c3 .deep-dive-label { background: linear-gradient(135deg, #7c5a0d, #b08a2d); }
+  .c4 .deep-dive-label { background: linear-gradient(135deg, #5a0d7c, #8a2db0); }
+  .c5 .deep-dive-label { background: linear-gradient(135deg, #7c0d3a, #b02d5a); }
+  .c6 .deep-dive-label { background: linear-gradient(135deg, #2a6a3a, #4a9a5a); }
+
+  /* Data Flow Diagram */
+  .flow-section {
+    margin-bottom: 1.5rem;
+  }
+  .flow-section-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #0d3d30;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .flow-section-title::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 14px;
+    border-radius: 2px;
+  }
+  .c1 .flow-section-title::before { background: #0d7c5f; }
+  .c2 .flow-section-title::before { background: #1a6b8a; }
+  .c3 .flow-section-title::before { background: #7c5a0d; }
+  .c4 .flow-section-title::before { background: #5a0d7c; }
+  .c5 .flow-section-title::before { background: #7c0d3a; }
+  .c6 .flow-section-title::before { background: #2a6a3a; }
+
+  /* Flow Diagram */
+  .flow-diagram {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    overflow-x: auto;
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .flow-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .flow-phase-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .flow-box-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    width: 100%;
+  }
+
+  .flow-box {
+    background: #fff;
+    border: 1.5px solid #d0ddd8;
+    border-radius: 8px;
+    padding: 0.45rem 0.6rem;
+    font-size: 0.68rem;
+    color: #2a4a40;
+    text-align: center;
+    line-height: 1.5;
+    font-weight: 500;
+    transition: border-color 0.2s;
+  }
+  .flow-box.source { border-color: #b8ddd0; background: #e8f5f0; }
+  .flow-box.process { border-color: #b8c8e0; background: #e8eef5; }
+  .flow-box.output { border-color: #d0c8b0; background: #f5f0e8; }
+  .flow-box.value { border-color: #c0d8b8; background: #eef5e8; }
+
+  .flow-arrow-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    flex-shrink: 0;
+    padding-top: 1.2rem;
+  }
+  .flow-arrow {
+    color: #a0b8b0;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  /* Benefit Section */
+  .benefit-section {
+    margin-top: 0.5rem;
+  }
+
+  .benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .benefit-card {
+    border-radius: 10px;
+    padding: 0.9rem 1rem;
+    border: 1px solid #e8f0ec;
+    background: #fff;
+  }
+  .benefit-card .benefit-icon {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+  }
+  .benefit-card .benefit-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #0d3d30;
+    margin-bottom: 0.3rem;
+  }
+  .benefit-card .benefit-desc {
+    font-size: 0.73rem;
+    color: #4a6a60;
+    line-height: 1.7;
+  }
+  .benefit-card .benefit-metric {
+    display: inline-block;
+    margin-top: 0.4rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.15rem 0.6rem;
+    border-radius: 100px;
+  }
+  .c1 .benefit-metric { background: #e0f2ec; color: #0d6a50; }
+  .c2 .benefit-metric { background: #e0eef5; color: #1a5a7a; }
+  .c3 .benefit-metric { background: #f5efe0; color: #6a4a0a; }
+  .c4 .benefit-metric { background: #f0e0f5; color: #4a0a6a; }
+  .c5 .benefit-metric { background: #f5e0ea; color: #6a0a3a; }
+  .c6 .benefit-metric { background: #e5f2e0; color: #2a5a2a; }
+
+  /* Use Case Box */
+  .use-case {
+    margin-top: 1rem;
+    background: #f8faf9;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    border: 1px solid #e8f0ec;
+  }
+  .use-case-label {
+    font-size: 0.63rem;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .use-case p {
+    font-size: 0.78rem;
+    color: #3a5a50;
+    line-height: 1.8;
+  }
+
+  /* Footer Summary Table */
+  .summary {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(13, 61, 48, 0.06);
+    border: 1px solid #e0ece8;
+  }
+  .summary h2 {
+    padding: 1.2rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #0d3d30, #145a48);
+    color: #fff;
+  }
+  .summary table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.78rem;
+  }
+  .summary th {
+    background: #f0f6f3;
+    color: #0d3d30;
+    font-weight: 700;
+    text-align: left;
+    padding: 0.7rem 1rem;
+    border-bottom: 2px solid #d5e8e0;
+    white-space: nowrap;
+  }
+  .summary td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid #eef3f0;
+    vertical-align: top;
+    color: #2a4a40;
+    line-height: 1.6;
+  }
+  .summary tr:last-child td { border-bottom: none; }
+  .summary tr:hover td { background: #f8fdfb; }
+  .ds-check { color: #0d7c5f; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="label">Data Mashup Service Blueprint v2</div>
+    <h1><span>資源と人を未来につなぐ</span><br>公的データ × 廃棄物処理 サービス構想</h1>
+    <p class="subtitle">10の公的データセットをマッシュアップし、排出事業者・処理業者・地域社会に新しい価値を届ける6つのサービス</p>
+    <div class="author-info">
+      <p>作成者：株式会社市川環境エンジニアリング　真庭謙太郎</p>
+      <p>作成日：2026年2月27日</p>
+    </div>
+  </div>
+
+  <!-- Vision -->
+  <div class="vision">
+    <h2>CONCEPT</h2>
+    <div class="concept">「資源と人を未来につなぐには？」</div>
+    <p>
+      廃棄物は「終わり」ではなく「始まり」。公的データの力で、廃棄物の流れを可視化し、<br>
+      排出事業者と処理技術を最適にマッチングし、地域の資源循環を文化と法の両面から支える。<br>
+      データが繋ぐ先にあるのは、資源も人も循環する持続可能な社会。
+    </p>
+  </div>
+
+  <!-- Service Cards -->
+  <div class="services">
+
+    <!-- ======================== Service 01 ======================== -->
+    <div class="service-card c1">
+      <div class="card-header">
+        <div class="card-num">01</div>
+        <h3>廃棄物フロー可視化ダッシュボード<small>Regional Waste Flow Intelligence</small></h3>
+      </div>
+      <div class="card-body">
+        <p class="desc">
+          地域ごとの廃棄物発生量・種類・処理ルートをGIS上でリアルタイム可視化。排出事業者は最寄りの最適処理施設を即座に特定でき、自治体は政策立案に活用できる。気象データと連携し、季節変動や災害時の廃棄物増加も予測する。
+        </p>
+        <div class="data-row">
+          <div class="data-row-label">使用データセット</div>
+          <div class="tags">
+            <span class="tag primary">③ 国土数値情報</span>
+            <span class="tag primary">④ e-Stat</span>
+            <span class="tag primary">⑥ 気象庁データ</span>
+            <span class="tag primary">⑨ 基盤地図情報</span>
+          </div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-item">
+            <div class="meta-label">対象ユーザー</div>
+            <div class="meta-value">排出事業者 / 自治体 / 廃棄物処理業者</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">提供価値</div>
+            <div class="meta-value">収集運搬コスト最適化、災害廃棄物の事前計画策定</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deep Dive -->
+      <div class="deep-dive">
+        <div class="deep-dive-label">Deep Dive</div>
+
+        <div class="flow-section">
+          <div class="flow-section-title">データフロー</div>
+          <div class="flow-diagram">
+            <div class="flow-col">
+              <div class="flow-phase-label">DATA SOURCE</div>
+              <div class="flow-box-group">
+                <div class="flow-box source">国土数値情報<br><small>施設位置・道路NW</small></div>
+                <div class="flow-box source">e-Stat<br><small>産廃排出量統計</small></div>
+                <div class="flow-box source">気象庁<br><small>降水量・気温予測</small></div>
+                <div class="flow-box source">基盤地図情報<br><small>標高・浸水域</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">ETL &amp; 統合</div>
+              <div class="flow-box-group">
+                <div class="flow-box process">GIS座標の正規化<br><small>位置情報の統合レイヤー</small></div>
+                <div class="flow-box process">時系列データ結合<br><small>統計×気象×排出量</small></div>
+                <div class="flow-box process">需要予測モデル<br><small>季節変動・異常検知</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">OUTPUT</div>
+              <div class="flow-box-group">
+                <div class="flow-box output">GISダッシュボード<br><small>ヒートマップ表示</small></div>
+                <div class="flow-box output">最適ルート算出<br><small>施設×排出元マッチ</small></div>
+                <div class="flow-box output">予測アラート<br><small>増加トレンド通知</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">顧客価値</div>
+              <div class="flow-box-group">
+                <div class="flow-box value">運搬コスト削減<br><small>最短ルート自動提案</small></div>
+                <div class="flow-box value">自治体の政策立案<br><small>データドリブン施策</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-section">
+          <div class="flow-section-title">顧客にとっての具体的メリット</div>
+          <div class="benefit-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">🚛</div>
+              <div class="benefit-title">収集運搬コストの最適化</div>
+              <div class="benefit-desc">排出場所と処理施設の位置関係をGISで自動分析し、最短・最安ルートを提案。複数排出元の巡回ルートも最適化。</div>
+              <span class="benefit-metric">想定効果：運搬費 15-25%削減</span>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">📊</div>
+              <div class="benefit-title">排出量の事前予測</div>
+              <div class="benefit-desc">気象データ×過去の排出統計から、翌月の排出量を予測。処理業者は車両・人員配置を事前に最適化でき、排出事業者は見積精度が向上する。</div>
+              <span class="benefit-metric">想定効果：予測精度 85%以上</span>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">🏛️</div>
+              <div class="benefit-title">自治体の計画策定支援</div>
+              <div class="benefit-desc">地域別の廃棄物発生トレンドを可視化し、処理施設の増設計画や広域連携の根拠データを自動レポート生成する。</div>
+              <span class="benefit-metric">想定効果：計画策定期間 50%短縮</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-label">具体的な利用シーン</div>
+          <p>千葉県内の製造業A社が工場移転を検討中。ダッシュボードで移転候補地の周辺処理施設を検索し、品目別の処理可能量・運搬距離・コスト概算を即座に比較。移転先の決定に廃棄物処理コストを定量的に組み込むことができる。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================== Service 02 ======================== -->
+    <div class="service-card c2">
+      <div class="card-header">
+        <div class="card-num">02</div>
+        <h3>処理技術マッチングエンジン<small>Treatment Technology Recommender</small></h3>
+      </div>
+      <div class="card-body">
+        <p class="desc">
+          排出事業者が廃棄物の種類・量・性状を入力すると、特許情報と学術論文から最適な処理技術と許可業者を推薦。法令データベースと連携し、廃掃法・各自治体条例の遵守チェックも同時に行う。技術トレンドの変化も通知し、常に最新の処理方法を提案する。
+        </p>
+        <div class="data-row">
+          <div class="data-row-label">使用データセット</div>
+          <div class="tags">
+            <span class="tag primary">⑤ J-STAGE</span>
+            <span class="tag primary">⑦ J-PlatPat</span>
+            <span class="tag primary">⑧ e-Gov法令検索</span>
+          </div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-item">
+            <div class="meta-label">対象ユーザー</div>
+            <div class="meta-value">排出事業者 / 処理業者の営業担当</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">提供価値</div>
+            <div class="meta-value">適正処理の確実な担保、新技術導入の意思決定支援</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deep Dive -->
+      <div class="deep-dive">
+        <div class="deep-dive-label">Deep Dive</div>
+
+        <div class="flow-section">
+          <div class="flow-section-title">データフロー</div>
+          <div class="flow-diagram">
+            <div class="flow-col">
+              <div class="flow-phase-label">DATA SOURCE</div>
+              <div class="flow-box-group">
+                <div class="flow-box source">J-STAGE<br><small>処理技術の学術論文</small></div>
+                <div class="flow-box source">J-PlatPat<br><small>廃棄物処理特許</small></div>
+                <div class="flow-box source">e-Gov法令<br><small>廃掃法・施行令</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">AI処理エンジン</div>
+              <div class="flow-box-group">
+                <div class="flow-box process">廃棄物分類AI<br><small>20品目自動判定</small></div>
+                <div class="flow-box process">技術-品目マッチング<br><small>論文×特許ベクトル検索</small></div>
+                <div class="flow-box process">法令適合性チェック<br><small>許可品目の自動照合</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">OUTPUT</div>
+              <div class="flow-box-group">
+                <div class="flow-box output">技術推薦リスト<br><small>スコア付きランキング</small></div>
+                <div class="flow-box output">許可業者一覧<br><small>距離・価格・実績順</small></div>
+                <div class="flow-box output">技術トレンドレポート<br><small>月次自動配信</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">顧客価値</div>
+              <div class="flow-box-group">
+                <div class="flow-box value">最適処理の即時判断<br><small>検討期間の大幅短縮</small></div>
+                <div class="flow-box value">営業提案力の強化<br><small>エビデンスベースの提案</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-section">
+          <div class="flow-section-title">顧客にとっての具体的メリット</div>
+          <div class="benefit-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">🔬</div>
+              <div class="benefit-title">最新技術への即時アクセス</div>
+              <div class="benefit-desc">学術論文と特許をAIが常時スキャン。従来の焼却・埋立以外の選択肢（超臨界水処理、バイオリーチングなど）を排出物の性状に応じて自動提案。</div>
+              <span class="benefit-metric">想定効果：技術調査工数 90%削減</span>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">📋</div>
+              <div class="benefit-title">見積作成の効率化</div>
+              <div class="benefit-desc">排出事業者が性状を入力するだけで、推奨処理方法・概算コスト・法的要件が一括出力。処理業者の営業担当は見積作成時間を大幅に短縮できる。</div>
+              <span class="benefit-metric">想定効果：見積作成時間 60%短縮</span>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">⚖️</div>
+              <div class="benefit-title">法令リスクの自動排除</div>
+              <div class="benefit-desc">推薦する処理技術は常に最新の法令データと照合済み。特別管理産業廃棄物の処理基準や、自治体ごとの上乗せ規制も自動でチェックされる。</div>
+              <span class="benefit-metric">想定効果：法令違反リスク 実質ゼロ</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-label">具体的な利用シーン</div>
+          <p>化学工場から「pH2.5の廃酸（フッ素含有）」の処理相談を受けた営業担当が、性状情報を入力。エンジンが中和処理＋フッ素回収の特許技術を提示し、対応可能な許可業者3社をランキング表示。根拠となる論文リンクと法的要件を添えた提案書を10分で作成。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================== Service 03 ======================== -->
+    <div class="service-card c3">
+      <div class="card-header">
+        <div class="card-num">03</div>
+        <h3>コンプライアンス自動監査サービス<small>Waste Compliance Auto-Audit</small></h3>
+      </div>
+      <div class="card-body">
+        <p class="desc">
+          マニフェスト情報・委託契約書を読み込み、廃掃法や関連政令・省令との整合性をAIが即時チェック。法改正があれば自動で差分通知を行い、排出事業者の管理責任をサポート。書誌データベースから関連ガイドラインや通知も横断検索し、根拠資料を付けて報告する。
+        </p>
+        <div class="data-row">
+          <div class="data-row-label">使用データセット</div>
+          <div class="tags">
+            <span class="tag primary">⑧ e-Gov法令検索</span>
+            <span class="tag primary">② 国会図書館書誌</span>
+            <span class="tag primary">⑤ J-STAGE</span>
+          </div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-item">
+            <div class="meta-label">対象ユーザー</div>
+            <div class="meta-value">排出事業者の環境管理部門 / 処理業者</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">提供価値</div>
+            <div class="meta-value">法令違反リスクの早期発見、監査工数の大幅削減</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deep Dive -->
+      <div class="deep-dive">
+        <div class="deep-dive-label">Deep Dive</div>
+
+        <div class="flow-section">
+          <div class="flow-section-title">データフロー</div>
+          <div class="flow-diagram">
+            <div class="flow-col">
+              <div class="flow-phase-label">INPUT</div>
+              <div class="flow-box-group">
+                <div class="flow-box source">マニフェスト<br><small>電子/紙データ取込</small></div>
+                <div class="flow-box source">委託契約書<br><small>PDF/画像OCR処理</small></div>
+                <div class="flow-box source">e-Gov法令<br><small>廃掃法・政省令</small></div>
+                <div class="flow-box source">国会図書館書誌<br><small>通知・ガイドライン</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">監査エンジン</div>
+              <div class="flow-box-group">
+                <div class="flow-box process">文書構造解析<br><small>NLPで条項抽出</small></div>
+                <div class="flow-box process">法令ルールDB照合<br><small>条文×契約条件マッチ</small></div>
+                <div class="flow-box process">法改正差分検知<br><small>日次クロール&amp;通知</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">OUTPUT</div>
+              <div class="flow-box-group">
+                <div class="flow-box output">監査レポート<br><small>指摘事項＋根拠条文</small></div>
+                <div class="flow-box output">リスクスコア<br><small>契約・マニフェスト別</small></div>
+                <div class="flow-box output">改正アラート<br><small>影響範囲の自動特定</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">顧客価値</div>
+              <div class="flow-box-group">
+                <div class="flow-box value">行政処分の未然防止<br><small>排出者責任の確実な履行</small></div>
+                <div class="flow-box value">監査業務の自動化<br><small>年次監査→常時監視</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-section">
+          <div class="flow-section-title">顧客にとっての具体的メリット</div>
+          <div class="benefit-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">🛡️</div>
+              <div class="benefit-title">行政処分リスクの回避</div>
+              <div class="benefit-desc">マニフェストの記載不備や契約書の必須条項漏れをリアルタイムで検出。措置命令や事業停止のリスクを未然に防ぐ。排出事業者の注意義務（法第12条3項）を確実に履行。</div>
+              <span class="benefit-metric">想定効果：不備検出率 98%以上</span>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">⏱️</div>
+              <div class="benefit-title">監査工数の劇的削減</div>
+              <div class="benefit-desc">年1回の手動監査から、AIによる常時監視に移行。環境管理担当者の負担を大幅に軽減し、本来のISO14001運用や環境改善活動に集中できる。</div>
+              <span class="benefit-metric">想定効果：監査工数 80%削減</span>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">📰</div>
+              <div class="benefit-title">法改正への即時対応</div>
+              <div class="benefit-desc">e-Govの法令更新を日次でクロールし、既存契約への影響を自動分析。「この契約書は改正後の基準に適合していない」といった具体的な指摘と修正案を提示。</div>
+              <span class="benefit-metric">想定効果：改正対応リードタイム 1日以内</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-label">具体的な利用シーン</div>
+          <p>建設会社B社が保有する50件の廃棄物委託契約書をアップロード。AIが3件の契約書で「処分場所の記載がない」「許可証の有効期限切れ」を検出し、該当条文と修正テンプレートをレポート出力。さらに来月施行の施行令改正が2件の契約に影響することも併せて通知。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================== Service 04 ======================== -->
+    <div class="service-card c4">
+      <div class="card-header">
+        <div class="card-num">04</div>
+        <h3>災害廃棄物シミュレーション<small>Disaster Waste Planning System</small></h3>
+      </div>
+      <div class="card-body">
+        <p class="desc">
+          過去の災害データ・地形情報・気象予測を組み合わせ、地域別の災害廃棄物発生量をシミュレーション。処理施設のキャパシティと運搬ルートを最適化し、事前の仮置場候補地の選定まで支援する。人口動態データで地域ごとの脆弱性も評価する。
+        </p>
+        <div class="data-row">
+          <div class="data-row-label">使用データセット</div>
+          <div class="tags">
+            <span class="tag primary">⑨ 基盤地図情報</span>
+            <span class="tag primary">⑥ 気象庁データ</span>
+            <span class="tag primary">③ 国土数値情報</span>
+            <span class="tag primary">④ e-Stat</span>
+          </div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-item">
+            <div class="meta-label">対象ユーザー</div>
+            <div class="meta-value">自治体防災部門 / 災害廃棄物処理受託業者</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">提供価値</div>
+            <div class="meta-value">災害発生前の計画策定、復旧期間の短縮</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deep Dive -->
+      <div class="deep-dive">
+        <div class="deep-dive-label">Deep Dive</div>
+
+        <div class="flow-section">
+          <div class="flow-section-title">データフロー</div>
+          <div class="flow-diagram">
+            <div class="flow-col">
+              <div class="flow-phase-label">DATA SOURCE</div>
+              <div class="flow-box-group">
+                <div class="flow-box source">基盤地図情報<br><small>DEM・浸水想定域</small></div>
+                <div class="flow-box source">気象庁<br><small>過去災害・予測データ</small></div>
+                <div class="flow-box source">国土数値情報<br><small>建物・インフラ分布</small></div>
+                <div class="flow-box source">e-Stat<br><small>人口・世帯・建物統計</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">シミュレーション</div>
+              <div class="flow-box-group">
+                <div class="flow-box process">被害推計モデル<br><small>震度×建物構造×築年</small></div>
+                <div class="flow-box process">廃棄物量推計<br><small>建物被害→がれき量</small></div>
+                <div class="flow-box process">処理能力評価<br><small>施設キャパ×運搬NW</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">OUTPUT</div>
+              <div class="flow-box-group">
+                <div class="flow-box output">発生量マップ<br><small>メッシュ別推計値</small></div>
+                <div class="flow-box output">仮置場候補地<br><small>適地評価スコア</small></div>
+                <div class="flow-box output">処理計画書<br><small>期間×費用×体制案</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">顧客価値</div>
+              <div class="flow-box-group">
+                <div class="flow-box value">発災前の計画策定<br><small>初動の迅速化</small></div>
+                <div class="flow-box value">広域連携の根拠<br><small>近隣自治体との調整材料</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-section">
+          <div class="flow-section-title">顧客にとっての具体的メリット</div>
+          <div class="benefit-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">🗺️</div>
+              <div class="benefit-title">仮置場の事前確保</div>
+              <div class="benefit-desc">浸水リスク・アクセス性・環境影響を多層評価し、最適な仮置場候補地をランキング。発災後の「場所が見つからない」問題を事前に解消する。</div>
+              <span class="benefit-metric">想定効果：仮置場選定期間 数週間→即日</span>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">📐</div>
+              <div class="benefit-title">発生量の精密推計</div>
+              <div class="benefit-desc">建物構造（木造・RC・S造）×築年数×被害程度から、がれき・木くず・コンガラ等の品目別発生量を250mメッシュで推計。処理計画の精度が飛躍的に向上。</div>
+              <span class="benefit-metric">想定効果：推計精度 ±15%以内</span>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">🤝</div>
+              <div class="benefit-title">広域処理の調整支援</div>
+              <div class="benefit-desc">被災自治体の処理能力を超える場合、近隣自治体の余力を自動算出し、広域処理の協定案を生成。環境省の災害廃棄物対策指針に準拠した計画書を自動出力。</div>
+              <span class="benefit-metric">想定効果：復旧期間 30%短縮</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-label">具体的な利用シーン</div>
+          <p>千葉県沿岸部の自治体が南海トラフ地震を想定したシミュレーションを実行。津波浸水域の建物データから災害廃棄物120万トンの発生を推計。既存3施設では処理に8年かかる試算に対し、近隣4自治体との広域連携により3年での処理計画を策定。仮置場5箇所の候補地も確保。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================== Service 05 ======================== -->
+    <div class="service-card c5">
+      <div class="card-header">
+        <div class="card-num">05</div>
+        <h3>文化財保全×廃棄物管理プラットフォーム<small>Heritage-Aware Waste Management</small></h3>
+      </div>
+      <div class="card-body">
+        <p class="desc">
+          建設・解体現場が文化財保護区域や歴史的景観地区に隣接する場合、自動でアラートを発出。解体廃棄物のうち歴史的価値のある資材（古材・古瓦など）を識別し、リユース・保全ルートを提案する。文化観光との連携で「サーキュラー・ヘリテージ」の新概念を展開。
+        </p>
+        <div class="data-row">
+          <div class="data-row-label">使用データセット</div>
+          <div class="tags">
+            <span class="tag primary">① ColBase</span>
+            <span class="tag primary">⑩ 文化遺産オンライン</span>
+            <span class="tag primary">③ 国土数値情報</span>
+            <span class="tag primary">⑧ e-Gov法令検索</span>
+          </div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-item">
+            <div class="meta-label">対象ユーザー</div>
+            <div class="meta-value">建設・解体業者 / 自治体文化財課 / 古材リユース事業者</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">提供価値</div>
+            <div class="meta-value">文化財保護と解体工事の両立、古材の経済的価値化</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deep Dive -->
+      <div class="deep-dive">
+        <div class="deep-dive-label">Deep Dive</div>
+
+        <div class="flow-section">
+          <div class="flow-section-title">データフロー</div>
+          <div class="flow-diagram">
+            <div class="flow-col">
+              <div class="flow-phase-label">DATA SOURCE</div>
+              <div class="flow-box-group">
+                <div class="flow-box source">ColBase<br><small>文化財登録情報</small></div>
+                <div class="flow-box source">文化遺産オンライン<br><small>保護区域・景観地区</small></div>
+                <div class="flow-box source">国土数値情報<br><small>用途地域・地番データ</small></div>
+                <div class="flow-box source">e-Gov法令<br><small>文化財保護法・景観法</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">判定エンジン</div>
+              <div class="flow-box-group">
+                <div class="flow-box process">文化財近接判定<br><small>GISバッファ分析</small></div>
+                <div class="flow-box process">資材価値評価AI<br><small>古材・古瓦の年代推定</small></div>
+                <div class="flow-box process">法的制約チェック<br><small>届出義務の有無判定</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">OUTPUT</div>
+              <div class="flow-box-group">
+                <div class="flow-box output">保護区域アラート<br><small>工事前の自動通知</small></div>
+                <div class="flow-box output">古材マッチング<br><small>リユース先の仲介</small></div>
+                <div class="flow-box output">文化価値レポート<br><small>観光活用の提案</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">顧客価値</div>
+              <div class="flow-box-group">
+                <div class="flow-box value">文化財毀損の防止<br><small>コンプライアンス確保</small></div>
+                <div class="flow-box value">廃棄物→資源への転換<br><small>古材の経済的価値化</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-section">
+          <div class="flow-section-title">顧客にとっての具体的メリット</div>
+          <div class="benefit-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">🏯</div>
+              <div class="benefit-title">文化財毀損リスクの回避</div>
+              <div class="benefit-desc">解体現場の住所を入力するだけで、半径500m以内の文化財・歴史的景観地区を自動検出。文化財保護法の届出義務の有無も即時判定し、知らなかったでは済まない法的リスクを防ぐ。</div>
+              <span class="benefit-metric">想定効果：届出漏れ 実質ゼロ</span>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">♻️</div>
+              <div class="benefit-title">古材の経済的価値化</div>
+              <div class="benefit-desc">解体で発生する古木材・古瓦・古煉瓦を、ColBaseの年代情報とAI画像分析で価値評価。古民家再生・文化施設修復への仲介で、廃棄コストが「売上」に転換する。</div>
+              <span class="benefit-metric">想定効果：古材買取額 数十万～数百万円/件</span>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">🎌</div>
+              <div class="benefit-title">サーキュラー・ヘリテージの実現</div>
+              <div class="benefit-desc">解体資材の来歴を「文化的ストーリー」として記録し、リユース先で付加価値として活用。地域の歴史をモノと共に循環させる新しい資源循環モデルを構築。</div>
+              <span class="benefit-metric">想定効果：地域ブランド価値の向上</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-label">具体的な利用シーン</div>
+          <p>築80年の旅館解体工事を受注した解体業者がシステムに住所を入力。300m先に登録有形文化財があることをアラートで把握し、文化財保護法に基づく届出を実施。さらに、旅館の欅の梁材（推定樹齢200年）をAIが高評価。古民家カフェの改装を予定する事業者とマッチングが成立し、処分費用ゼロ＋古材売却益50万円を実現。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================== Service 06 ======================== -->
+    <div class="service-card c6">
+      <div class="card-header">
+        <div class="card-num">06</div>
+        <h3>循環経済ナレッジハブ<small>Circular Economy Knowledge Hub</small></h3>
+      </div>
+      <div class="card-body">
+        <p class="desc">
+          学術論文・特許・統計データ・法令を横断検索し、廃棄物処理の最新動向・技術革新・政策変更をワンストップで提供。排出事業者向けの教育コンテンツ（適正処理の要点、分別ガイド）を自動生成し、産業廃棄物管理票の記入支援まで行う包括的な情報プラットフォーム。
+        </p>
+        <div class="data-row">
+          <div class="data-row-label">使用データセット</div>
+          <div class="tags">
+            <span class="tag primary">② 国会図書館書誌</span>
+            <span class="tag primary">⑤ J-STAGE</span>
+            <span class="tag primary">⑦ J-PlatPat</span>
+            <span class="tag primary">④ e-Stat</span>
+            <span class="tag primary">⑧ e-Gov法令検索</span>
+          </div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-item">
+            <div class="meta-label">対象ユーザー</div>
+            <div class="meta-value">排出事業者全般 / 処理業者の新人教育 / 環境コンサルタント</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">提供価値</div>
+            <div class="meta-value">情報収集コストの劇的削減、業界リテラシー向上</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deep Dive -->
+      <div class="deep-dive">
+        <div class="deep-dive-label">Deep Dive</div>
+
+        <div class="flow-section">
+          <div class="flow-section-title">データフロー</div>
+          <div class="flow-diagram">
+            <div class="flow-col">
+              <div class="flow-phase-label">DATA SOURCE</div>
+              <div class="flow-box-group">
+                <div class="flow-box source">国会図書館書誌<br><small>書籍・行政文書</small></div>
+                <div class="flow-box source">J-STAGE<br><small>廃棄物関連論文</small></div>
+                <div class="flow-box source">J-PlatPat<br><small>処理技術特許</small></div>
+                <div class="flow-box source">e-Stat / e-Gov<br><small>統計・法令</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">RAGエンジン</div>
+              <div class="flow-box-group">
+                <div class="flow-box process">ベクトルDB構築<br><small>全文書のエンベディング</small></div>
+                <div class="flow-box process">対話型検索AI<br><small>自然言語Q&amp;A</small></div>
+                <div class="flow-box process">コンテンツ自動生成<br><small>分別ガイド・教材</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">OUTPUT</div>
+              <div class="flow-box-group">
+                <div class="flow-box output">AIチャットボット<br><small>廃棄物の専門知識Q&amp;A</small></div>
+                <div class="flow-box output">教育コンテンツ<br><small>分別ガイド自動生成</small></div>
+                <div class="flow-box output">業界レポート<br><small>月次トレンド分析</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">顧客価値</div>
+              <div class="flow-box-group">
+                <div class="flow-box value">情報格差の解消<br><small>誰でもプロレベルの知識</small></div>
+                <div class="flow-box value">教育コスト削減<br><small>研修の自動化</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-section">
+          <div class="flow-section-title">顧客にとっての具体的メリット</div>
+          <div class="benefit-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">💬</div>
+              <div class="benefit-title">専門知識への即時アクセス</div>
+              <div class="benefit-desc">「汚泥のpHが高い場合の処理方法は？」といった質問に、論文・特許・法令を横断したエビデンス付きの回答を即時提供。専門家に相談するまでもない疑問を自己解決できる。</div>
+              <span class="benefit-metric">想定効果：問い合わせ対応 70%削減</span>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">📚</div>
+              <div class="benefit-title">新人教育の効率化</div>
+              <div class="benefit-desc">産業廃棄物20品目の分類方法、マニフェストの記入要領、特管産廃の取扱い注意点などを、対話形式で学べる教育コンテンツを自動生成。OJTの前に基礎知識を習得できる。</div>
+              <span class="benefit-metric">想定効果：教育期間 40%短縮</span>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">📈</div>
+              <div class="benefit-title">業界トレンドの先読み</div>
+              <div class="benefit-desc">J-STAGEの論文出版動向とJ-PlatPatの特許出願動向を分析し、「来年注目される処理技術」や「規制強化が予想される品目」を月次レポートで提供。経営判断の先行指標になる。</div>
+              <span class="benefit-metric">想定効果：情報収集工数 85%削減</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-label">具体的な利用シーン</div>
+          <p>廃棄物処理業者の新人営業が、顧客から「PFAS含有の汚泥はどう処理すべきか」と質問を受ける。ナレッジハブのAIチャットで質問すると、最新の論文3件・関連特許2件・環境省通知1件をもとに、現時点で推奨される処理フロー（活性炭吸着→高温焼却）と法的要件を整理した回答を取得。顧客への回答を30分以内に完了。</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Summary Matrix Table -->
+  <div class="summary">
+    <h2>📊 データセット × サービス マッピング一覧</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>データセット</th>
+          <th>01 フロー<br>可視化</th>
+          <th>02 技術<br>マッチング</th>
+          <th>03 コンプラ<br>監査</th>
+          <th>04 災害<br>シミュレーション</th>
+          <th>05 文化財<br>保全連携</th>
+          <th>06 ナレッジ<br>ハブ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>① ColBase（文化財）</td>
+          <td></td><td></td><td></td><td></td>
+          <td class="ds-check">●</td><td></td>
+        </tr>
+        <tr>
+          <td>② 国会図書館書誌</td>
+          <td></td><td></td>
+          <td class="ds-check">●</td>
+          <td></td><td></td>
+          <td class="ds-check">●</td>
+        </tr>
+        <tr>
+          <td>③ 国土数値情報（GIS）</td>
+          <td class="ds-check">●</td><td></td><td></td>
+          <td class="ds-check">●</td>
+          <td class="ds-check">●</td><td></td>
+        </tr>
+        <tr>
+          <td>④ e-Stat（統計）</td>
+          <td class="ds-check">●</td><td></td><td></td>
+          <td class="ds-check">●</td><td></td>
+          <td class="ds-check">●</td>
+        </tr>
+        <tr>
+          <td>⑤ J-STAGE（学術論文）</td>
+          <td></td>
+          <td class="ds-check">●</td>
+          <td class="ds-check">●</td>
+          <td></td><td></td>
+          <td class="ds-check">●</td>
+        </tr>
+        <tr>
+          <td>⑥ 気象庁データ</td>
+          <td class="ds-check">●</td><td></td><td></td>
+          <td class="ds-check">●</td><td></td><td></td>
+        </tr>
+        <tr>
+          <td>⑦ J-PlatPat（特許）</td>
+          <td></td>
+          <td class="ds-check">●</td>
+          <td></td><td></td><td></td>
+          <td class="ds-check">●</td>
+        </tr>
+        <tr>
+          <td>⑧ e-Gov法令検索</td>
+          <td></td>
+          <td class="ds-check">●</td>
+          <td class="ds-check">●</td>
+          <td></td>
+          <td class="ds-check">●</td>
+          <td class="ds-check">●</td>
+        </tr>
+        <tr>
+          <td>⑨ 基盤地図情報（防災）</td>
+          <td class="ds-check">●</td><td></td><td></td>
+          <td class="ds-check">●</td><td></td><td></td>
+        </tr>
+        <tr>
+          <td>⑩ 文化遺産オンライン</td>
+          <td></td><td></td><td></td><td></td>
+          <td class="ds-check">●</td><td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+</body>
+</html>
