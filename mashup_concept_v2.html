@@ -234,6 +234,10 @@
   .c4 .card-num { background: linear-gradient(135deg, #5a0d7c, #8a2db0); }
   .c5 .card-num { background: linear-gradient(135deg, #7c0d3a, #b02d5a); }
   .c6 .card-num { background: linear-gradient(135deg, #2a6a3a, #4a9a5a); }
+  .c7 .card-num { background: linear-gradient(135deg, #0d6a7c, #2d9aaa); }
+  .c8 .card-num { background: linear-gradient(135deg, #7c3a0d, #aa6a2d); }
+  .c9 .card-num { background: linear-gradient(135deg, #0d4a7c, #2d7aaa); }
+  .c10 .card-num { background: linear-gradient(135deg, #3a7c0d, #6aaa2d); }
 
   /* ===== Deep Dive Section (NEW) ===== */
   .deep-dive {
@@ -259,6 +263,10 @@
   .c4 .deep-dive-label { background: linear-gradient(135deg, #5a0d7c, #8a2db0); }
   .c5 .deep-dive-label { background: linear-gradient(135deg, #7c0d3a, #b02d5a); }
   .c6 .deep-dive-label { background: linear-gradient(135deg, #2a6a3a, #4a9a5a); }
+  .c7 .deep-dive-label { background: linear-gradient(135deg, #0d6a7c, #2d9aaa); }
+  .c8 .deep-dive-label { background: linear-gradient(135deg, #7c3a0d, #aa6a2d); }
+  .c9 .deep-dive-label { background: linear-gradient(135deg, #0d4a7c, #2d7aaa); }
+  .c10 .deep-dive-label { background: linear-gradient(135deg, #3a7c0d, #6aaa2d); }
 
   /* Data Flow Diagram */
   .flow-section {
@@ -286,6 +294,10 @@
   .c4 .flow-section-title::before { background: #5a0d7c; }
   .c5 .flow-section-title::before { background: #7c0d3a; }
   .c6 .flow-section-title::before { background: #2a6a3a; }
+  .c7 .flow-section-title::before { background: #0d6a7c; }
+  .c8 .flow-section-title::before { background: #7c3a0d; }
+  .c9 .flow-section-title::before { background: #0d4a7c; }
+  .c10 .flow-section-title::before { background: #3a7c0d; }
 
   /* Flow Diagram */
   .flow-diagram {
@@ -400,6 +412,10 @@
   .c4 .benefit-metric { background: #f0e0f5; color: #4a0a6a; }
   .c5 .benefit-metric { background: #f5e0ea; color: #6a0a3a; }
   .c6 .benefit-metric { background: #e5f2e0; color: #2a5a2a; }
+  .c7 .benefit-metric { background: #e0f2f5; color: #0d5a6a; }
+  .c8 .benefit-metric { background: #f5ede0; color: #6a2a0d; }
+  .c9 .benefit-metric { background: #e0eaf5; color: #0d3a6a; }
+  .c10 .benefit-metric { background: #eaf5e0; color: #2a6a0d; }
 
   /* Use Case Box */
   .use-case {
@@ -472,10 +488,10 @@
   <div class="header">
     <div class="label">Data Mashup Service Blueprint v2</div>
     <h1><span>資源と人を未来につなぐ</span><br>公的データ × 廃棄物処理 サービス構想</h1>
-    <p class="subtitle">10の公的データセットをマッシュアップし、排出事業者・処理業者・地域社会に新しい価値を届ける6つのサービス</p>
+    <p class="subtitle">10の公的データセット＋環境Navi実績データをマッシュアップし、排出事業者・処理業者・地域社会に新しい価値を届ける10のサービス</p>
     <div class="author-info">
       <p>作成者：株式会社市川環境エンジニアリング　真庭謙太郎</p>
-      <p>作成日：2026年2月27日　／　最終更新日：2026年2月28日（電子マニフェスト新仕様対応）</p>
+      <p>作成日：2026年2月27日　／　最終更新日：2026年2月28日（環境Navi実績データ連携サービス追加）</p>
     </div>
   </div>
 
@@ -486,7 +502,10 @@
     <p>
       廃棄物は「終わり」ではなく「始まり」。公的データの力で、廃棄物の流れを可視化し、<br>
       排出事業者と処理技術を最適にマッチングし、地域の資源循環を文化と法の両面から支える。<br>
-      データが繋ぐ先にあるのは、資源も人も循環する持続可能な社会。
+      データが繋ぐ先にあるのは、資源も人も循環する持続可能な社会。<br><br>
+      さらに、寺岡精工「環境Navi」クラウドに蓄積された自社の廃棄物計量実績データを加えることで、<br>
+      構想は「実装」へと変わる。リアルな計量実績が公的データと融合したとき、<br>
+      排出事業者は初めて「自分ごと」の廃棄物削減アクションを手に入れる。
     </p>
   </div>
 
@@ -1146,6 +1165,443 @@
       </div>
     </div>
 
+    <!-- ======================== Section Divider: 環境Navi実績データ連携 ======================== -->
+    <div style="margin: 1rem 0; padding: 1.2rem 1.5rem; background: linear-gradient(135deg, #0d3d30, #145a48); border-radius: 14px; text-align: center; color: #fff;">
+      <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.5rem;">Part II — 自社実績データ × 公的データ</div>
+      <div style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem;">環境Navi クラウド実績データとのマッシュアップ</div>
+      <p style="font-size: 0.82rem; opacity: 0.85; line-height: 1.7; max-width: 700px; margin: 0 auto;">
+        寺岡精工「環境Navi」クラウドに蓄積された部門別・品目別の廃棄物計量実績データ（⑪）を11番目のデータセットとして活用。<br>
+        公的データとの掛け合わせで、「地域全体の構想」から「自社固有の改善アクション」へとサービスが進化する。
+      </p>
+    </div>
+
+    <!-- ======================== Service 07 ======================== -->
+    <div class="service-card c7">
+      <div class="card-header">
+        <div class="card-num">07</div>
+        <h3>排出量AI予測＆コスト最適化<small>Predictive Waste Analytics & Cost Optimizer</small></h3>
+      </div>
+      <div class="card-body">
+        <p class="desc">
+          環境Naviに蓄積された自社の廃棄物計量実績データをAIが学習し、翌週・翌月の品目別排出量を高精度で予測。気象庁の天候予報と連動して「気温30℃超の翌日は生鮮廃棄40%増加」といった相関を自動発見し、収集頻度と処理費を最適化する。e-Statの業種別排出原単位とも比較し、自社の廃棄物効率の改善余地を定量的に把握できる。
+        </p>
+        <div class="data-row">
+          <div class="data-row-label">使用データセット</div>
+          <div class="tags">
+            <span class="tag primary" style="background:#dff5f8;color:#0d6070;border-color:#aad8e0;">⑪ 環境Navi実績データ</span>
+            <span class="tag primary">⑥ 気象庁データ</span>
+            <span class="tag primary">④ e-Stat</span>
+          </div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-item">
+            <div class="meta-label">対象ユーザー</div>
+            <div class="meta-value">スーパー・外食チェーン本部 / 工場・事業所管理者</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">提供価値</div>
+            <div class="meta-value">廃棄物処理費 20〜30%削減、収集車の空振りゼロ</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deep Dive -->
+      <div class="deep-dive">
+        <div class="deep-dive-label">Deep Dive</div>
+
+        <div class="flow-section">
+          <div class="flow-section-title">データフロー</div>
+          <div class="flow-diagram">
+            <div class="flow-col">
+              <div class="flow-phase-label">DATA SOURCE</div>
+              <div class="flow-box-group">
+                <div class="flow-box source">環境Navi実績<br><small>部門×品目×重量×日時</small></div>
+                <div class="flow-box source">気象庁<br><small>気温・降水量・週間予報</small></div>
+                <div class="flow-box source">e-Stat<br><small>業種別廃棄物排出原単位</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">AI分析エンジン</div>
+              <div class="flow-box-group">
+                <div class="flow-box process">時系列分解<br><small>トレンド・季節・曜日成分</small></div>
+                <div class="flow-box process">気象相関モデル<br><small>天候×排出量の自動学習</small></div>
+                <div class="flow-box process">業界ベンチマーク<br><small>e-Stat原単位との比較</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">OUTPUT</div>
+              <div class="flow-box-group">
+                <div class="flow-box output">品目別排出量予測<br><small>翌週・翌月の推計値</small></div>
+                <div class="flow-box output">収集スケジュール案<br><small>最適頻度の自動提案</small></div>
+                <div class="flow-box output">コスト削減試算<br><small>改善効果シミュレーション</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">顧客価値</div>
+              <div class="flow-box-group">
+                <div class="flow-box value">処理費 20〜30%削減<br><small>収集頻度の最適化</small></div>
+                <div class="flow-box value">業界平均比較<br><small>改善余地の定量把握</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-section">
+          <div class="flow-section-title">顧客にとっての具体的メリット</div>
+          <div class="benefit-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">📅</div>
+              <div class="benefit-title">収集頻度の動的最適化</div>
+              <div class="benefit-desc">環境Naviの蓄積データから曜日・季節パターンをAIが学習し、「今週は収集不要」「来週は2回必要」を自動判定。収集業者へ事前に最適な依頼ができる。</div>
+              <span class="benefit-metric">想定効果：収集回数 25%削減</span>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">🌤️</div>
+              <div class="benefit-title">気象連動の先読み対応</div>
+              <div class="benefit-desc">「気温30℃超の翌日は生鮮廃棄40%増加」「台風前後は容器ごみ急増」といった相関をデータから自動発見。天候予報に連動して事前に収集体制を整備できる。</div>
+              <span class="benefit-metric">想定効果：予測精度 92%以上</span>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">📊</div>
+              <div class="benefit-title">業界水準との自動比較</div>
+              <div class="benefit-desc">e-Statの業種別排出原単位と自社の実績値を自動比較し、「同業他社平均より廃棄率が30%高い品目」を特定。改善優先順位を客観データで把握できる。</div>
+              <span class="benefit-metric">想定効果：業界平均比較レポート月次自動生成</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-label">具体的な利用シーン</div>
+          <p>関東30店舗のスーパーチェーンD社。環境Naviの12か月蓄積データ×気象庁データでAI分析した結果、「気温30℃超の翌日は生鮮ごみが平均40%増加」「雨天の月曜は可燃ごみが20%減少」というパターンを発見。収集スケジュールを動的に変更したところ、年間処理費を850万円削減。さらにe-Stat比較で「廃油の廃棄率が業種平均の2.1倍」と判明し、揚げ物管理の改善で廃油コストを半減した。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================== Service 08 ======================== -->
+    <div class="service-card c8">
+      <div class="card-header">
+        <div class="card-num">08</div>
+        <h3>フードロス・ゼロ・ナビゲーター<small>Food Loss Zero Navigator</small></h3>
+      </div>
+      <div class="card-body">
+        <p class="desc">
+          環境Naviの食品残渣計量データを基軸に、気象庁の需要予測・e-Statの業態別食品廃棄統計・J-STAGEの食品ロス削減研究を掛け合わせた、食品小売・外食専用のフードロス削減プラットフォーム。部門別の食品廃棄を金額換算でスコアカード表示し、学術知見に基づく具体的な改善アクションをAIが自動提案する。食品ロス削減のROIと年間CO₂削減量もリアルタイムで試算する。
+        </p>
+        <div class="data-row">
+          <div class="data-row-label">使用データセット</div>
+          <div class="tags">
+            <span class="tag primary" style="background:#dff5f8;color:#0d6070;border-color:#aad8e0;">⑪ 環境Navi実績データ</span>
+            <span class="tag primary">④ e-Stat</span>
+            <span class="tag primary">⑤ J-STAGE</span>
+            <span class="tag primary">⑥ 気象庁データ</span>
+          </div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-item">
+            <div class="meta-label">対象ユーザー</div>
+            <div class="meta-value">食品小売・外食チェーン / 食品製造業 / SDGs推進担当</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">提供価値</div>
+            <div class="meta-value">食品ロス30%削減、SDGs・ESGレポートデータ自動生成</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deep Dive -->
+      <div class="deep-dive">
+        <div class="deep-dive-label">Deep Dive</div>
+
+        <div class="flow-section">
+          <div class="flow-section-title">データフロー</div>
+          <div class="flow-diagram">
+            <div class="flow-col">
+              <div class="flow-phase-label">DATA SOURCE</div>
+              <div class="flow-box-group">
+                <div class="flow-box source">環境Navi実績<br><small>食品残渣・部門別計量</small></div>
+                <div class="flow-box source">気象庁<br><small>気温・天候→来客需要</small></div>
+                <div class="flow-box source">e-Stat<br><small>業態別食品廃棄統計</small></div>
+                <div class="flow-box source">J-STAGE<br><small>食品ロス削減研究論文</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">分析エンジン</div>
+              <div class="flow-box-group">
+                <div class="flow-box process">品目別廃棄率算出<br><small>野菜・肉・魚・惣菜の分解</small></div>
+                <div class="flow-box process">気象×需要相関<br><small>天候・曜日・イベント補正</small></div>
+                <div class="flow-box process">論文ルール適用<br><small>学術知見の自社データへの適用</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">OUTPUT</div>
+              <div class="flow-box-group">
+                <div class="flow-box output">部門別スコアカード<br><small>廃棄率×金額換算</small></div>
+                <div class="flow-box output">改善アクションリスト<br><small>論文根拠付き提案</small></div>
+                <div class="flow-box output">ROI・CO₂削減試算<br><small>削減効果の定量表示</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">顧客価値</div>
+              <div class="flow-box-group">
+                <div class="flow-box value">食品ロス 30%削減<br><small>部門別改善アクション</small></div>
+                <div class="flow-box value">SDGs報告データ<br><small>自動集計・整形</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-section">
+          <div class="flow-section-title">顧客にとっての具体的メリット</div>
+          <div class="benefit-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">🥗</div>
+              <div class="benefit-title">部門別フードロス・スコアカード</div>
+              <div class="benefit-desc">鮮魚・青果・惣菜・日配など部門ごとの食品廃棄率を金額換算し、改善優先度をランキング表示。「惣菜部門の週次廃棄が売上の8%」といった課題をデータで明確化。</div>
+              <span class="benefit-metric">想定効果：食品ロス率 30%改善</span>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">🔬</div>
+              <div class="benefit-title">学術知見の即時実践適用</div>
+              <div class="benefit-desc">J-STAGEの最新研究（陳列方法・発注ロジック・消費期限管理）を自社の計量データに照合し、「この廃棄パターンには調理時間シフトが効果的」と具体策を自動提案。</div>
+              <span class="benefit-metric">想定効果：研究→実践のリードタイム 1日以内</span>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">🌡️</div>
+              <div class="benefit-title">気象連動の見切りロス削減</div>
+              <div class="benefit-desc">天気予報×曜日×地域イベントから来客数と販売量を予測し、仕入・製造量を最適化。「雨の水曜は惣菜を20%減製造」などのルールを自動学習して提案する。</div>
+              <span class="benefit-metric">想定効果：見切りロス 40%削減</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-label">具体的な利用シーン</div>
+          <p>食品スーパーE社が環境Naviで惣菜部門の食品残渣を3か月計量。データ分析により「金曜日の揚げ物の廃棄率が35%」と判明。J-STAGEの論文から「ピーク1時間前の小ロット製造」の知見を適用し、製造スケジュールを変更。廃棄率を35%→12%に改善し、月間40万円のコスト削減と年間4.8トンのCO₂削減を達成。気象連動機能でさらに台風接近日の大幅仕入削減も実現し、廃棄ロスを年間でさらに150万円削減した。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================== Service 09 ======================== -->
+    <div class="service-card c9">
+      <div class="card-header">
+        <div class="card-num">09</div>
+        <h3>計量実績×電子マニフェスト自動連携<small>Measurement-to-Manifest Auto Bridge</small></h3>
+      </div>
+      <div class="card-body">
+        <p class="desc">
+          環境Naviの計量完了データをJWNET EDI形式のマニフェスト下書きへ自動変換し、発行工数を90%削減する。さらに計量値合計とマニフェスト記載量を常時照合し、数量の乖離や未記載をリアルタイムで検出するブリッジサービス。国土数値情報で処分施設のルートを自動検証し、マニフェストに記載された運搬経路の妥当性も確認する。既存のService 03（監査）と組み合わせることで、計量→マニフェスト生成→法令照合の全工程を自動化できる。
+        </p>
+        <div class="data-row">
+          <div class="data-row-label">使用データセット</div>
+          <div class="tags">
+            <span class="tag primary" style="background:#dff5f8;color:#0d6070;border-color:#aad8e0;">⑪ 環境Navi実績データ</span>
+            <span class="tag primary">⑧ e-Gov法令検索</span>
+            <span class="tag secondary">JWNET EDI仕様</span>
+            <span class="tag primary">③ 国土数値情報</span>
+          </div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-item">
+            <div class="meta-label">対象ユーザー</div>
+            <div class="meta-value">排出事業者の環境管理部門 / 産廃処理業者</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">提供価値</div>
+            <div class="meta-value">マニフェスト作成工数90%削減、計量と記録の常時整合確保</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deep Dive -->
+      <div class="deep-dive">
+        <div class="deep-dive-label">Deep Dive</div>
+
+        <div class="flow-section">
+          <div class="flow-section-title">データフロー</div>
+          <div class="flow-diagram">
+            <div class="flow-col">
+              <div class="flow-phase-label">INPUT</div>
+              <div class="flow-box-group">
+                <div class="flow-box source">環境Navi実績<br><small>品目×重量×部門×日時</small></div>
+                <div class="flow-box source">e-Gov法令<br><small>マニフェスト記載要件</small></div>
+                <div class="flow-box source">JWNET EDI仕様<br><small>D60-D65レイアウト</small></div>
+                <div class="flow-box source">国土数値情報<br><small>処分施設位置・道路NW</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">変換・照合エンジン</div>
+              <div class="flow-box-group">
+                <div class="flow-box process">品目コード変換<br><small>環境Navi品目→廃棄物分類コード</small></div>
+                <div class="flow-box process">マニフェスト項目マッピング<br><small>計量値→52項目自動充填</small></div>
+                <div class="flow-box process">数量照合<br><small>計量合計とマニフェスト記載量</small></div>
+                <div class="flow-box process">ルート検証<br><small>GISで運搬経路の妥当性確認</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">OUTPUT</div>
+              <div class="flow-box-group">
+                <div class="flow-box output">マニフェスト下書き<br><small>EDI形式で即時生成</small></div>
+                <div class="flow-box output">乖離アラート<br><small>未記載・数量不一致の即時通知</small></div>
+                <div class="flow-box output">日次照合レポート<br><small>計量vs記録の整合性報告</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">顧客価値</div>
+              <div class="flow-box-group">
+                <div class="flow-box value">マニフェスト業務の自動化<br><small>確認・承認のみで発行完了</small></div>
+                <div class="flow-box value">数量不整合の防止<br><small>不正記載リスクの根絶</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-section">
+          <div class="flow-section-title">顧客にとっての具体的メリット</div>
+          <div class="benefit-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">📝</div>
+              <div class="benefit-title">マニフェスト自動生成</div>
+              <div class="benefit-desc">環境Naviの計量完了時に、品目コード・重量・排出部門・日時をJWNET EDI形式のマニフェスト下書きとして自動生成。担当者は確認・承認のみで発行が完了する。</div>
+              <span class="benefit-metric">想定効果：マニフェスト作成工数 90%削減</span>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">⚡</div>
+              <div class="benefit-title">計量vs記録の常時照合</div>
+              <div class="benefit-desc">環境Naviの計量値合計とマニフェスト記載量をリアルタイムで照合。「計量100kgなのにマニフェスト80kg」「未発行の廃棄がある」などの不整合を即座にアラートで通知する。</div>
+              <span class="benefit-metric">想定効果：数量不一致 100%検出</span>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">🗺️</div>
+              <div class="benefit-title">処分ルートの自動検証</div>
+              <div class="benefit-desc">計量場所から処分施設までの距離・所要時間をGISで自動算出し、マニフェストの運搬経路と照合。許可外施設への運搬や不自然なルート迂回を早期検知する。</div>
+              <span class="benefit-metric">想定効果：不正ルート検知率 95%以上</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-label">具体的な利用シーン</div>
+          <p>製造業F社は月間200件の産廃マニフェストを手作業で発行していた。本サービス導入後、環境Naviの計量完了と同時にJWNET EDI形式の下書きが自動生成され、担当者は内容確認・承認のみで発行完了となった。ある月、汚泥の計量値合計が12トンにもかかわらずマニフェスト合計が8トンしかないことを乖離アラートが検出。処理業者との確認で未記載4トン分のマニフェスト漏れを発見し、措置命令リスクを未然に回避した。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================== Service 10 ======================== -->
+    <div class="service-card c10">
+      <div class="card-header">
+        <div class="card-num">10</div>
+        <h3>多拠点ベンチマーキング＆地域特性分析<small>Multi-Site Benchmarking & Regional Intelligence</small></h3>
+      </div>
+      <div class="card-body">
+        <p class="desc">
+          全拠点の環境Navi計量データを本部に集約し、廃棄物KPI（従業員あたり排出量・売上あたり排出量・リサイクル率）を拠点間で横並び比較。国土数値情報・e-Stat・基盤地図情報と連携して商圏人口・気候帯・土地利用を考慮した公正なベンチマーキングを実現し、「トップ拠点はなぜ優秀か」を科学的に解明する。全拠点データの自動集計でESGレポートの作成工数も大幅に削減する。
+        </p>
+        <div class="data-row">
+          <div class="data-row-label">使用データセット</div>
+          <div class="tags">
+            <span class="tag primary" style="background:#dff5f8;color:#0d6070;border-color:#aad8e0;">⑪ 環境Navi実績データ</span>
+            <span class="tag primary">③ 国土数値情報</span>
+            <span class="tag primary">④ e-Stat</span>
+            <span class="tag primary">⑨ 基盤地図情報</span>
+          </div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-item">
+            <div class="meta-label">対象ユーザー</div>
+            <div class="meta-value">チェーン企業本部・経営企画 / ESG・サステナビリティ推進部門</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">提供価値</div>
+            <div class="meta-value">全社廃棄物KPI 15〜20%改善、ESGデータ集計工数 95%削減</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deep Dive -->
+      <div class="deep-dive">
+        <div class="deep-dive-label">Deep Dive</div>
+
+        <div class="flow-section">
+          <div class="flow-section-title">データフロー</div>
+          <div class="flow-diagram">
+            <div class="flow-col">
+              <div class="flow-phase-label">DATA SOURCE</div>
+              <div class="flow-box-group">
+                <div class="flow-box source">環境Navi実績<br><small>全拠点×部門×品目×月次</small></div>
+                <div class="flow-box source">国土数値情報<br><small>商圏人口・土地利用</small></div>
+                <div class="flow-box source">e-Stat<br><small>地域別消費・人口統計</small></div>
+                <div class="flow-box source">基盤地図情報<br><small>気候帯・標高・地形</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">分析エンジン</div>
+              <div class="flow-box-group">
+                <div class="flow-box process">KPI算出・正規化<br><small>売上・従業員・商圏人口で補正</small></div>
+                <div class="flow-box process">クラスタ分析<br><small>類似拠点グループ化</small></div>
+                <div class="flow-box process">ベストプラクティス抽出<br><small>トップ拠点の成功要因分析</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">OUTPUT</div>
+              <div class="flow-box-group">
+                <div class="flow-box output">拠点別スコアカード<br><small>KPIランキング表示</small></div>
+                <div class="flow-box output">改善ロードマップ<br><small>ベストプラクティス横展開案</small></div>
+                <div class="flow-box output">ESGレポート用データ<br><small>Scope3・廃棄物原単位</small></div>
+              </div>
+            </div>
+            <div class="flow-arrow-col"><span class="flow-arrow">→</span></div>
+            <div class="flow-col">
+              <div class="flow-phase-label">顧客価値</div>
+              <div class="flow-box-group">
+                <div class="flow-box value">全社KPI 15〜20%改善<br><small>ベストプラクティス展開</small></div>
+                <div class="flow-box value">ESG報告の自動化<br><small>集計期間 2か月→3日</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-section">
+          <div class="flow-section-title">顧客にとっての具体的メリット</div>
+          <div class="benefit-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">⚖️</div>
+              <div class="benefit-title">公正なベンチマーキング</div>
+              <div class="benefit-desc">都市型店舗と郊外型店舗を売上規模・商圏人口・気候帯で正規化し、公正に比較。「条件が違うから」という言い訳なく、純粋な廃棄物管理の優劣を評価できる。</div>
+              <span class="benefit-metric">想定効果：拠点間KPI格差 50%縮小</span>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">🏆</div>
+              <div class="benefit-title">ベストプラクティスの自動横展開</div>
+              <div class="benefit-desc">トップ拠点の分別率・時間帯分布・品目構成を分析し、「このパターンがリサイクル率向上につながっている」という成功要因を自動抽出。他拠点への具体的な改善施策に変換する。</div>
+              <span class="benefit-metric">想定効果：全社リサイクル率 15pt向上</span>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">🌿</div>
+              <div class="benefit-title">ESG報告の完全自動化</div>
+              <div class="benefit-desc">全拠点の環境Naviデータを集約し、Scope3排出量・廃棄物原単位・食品リサイクル率・廃棄物処理費をESG報告書フォーマットに自動整形。手作業集計2か月分の作業を3日に短縮。</div>
+              <span class="benefit-metric">想定効果：ESGデータ集計工数 95%削減</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-label">具体的な利用シーン</div>
+          <p>全国120店舗の外食チェーンG社。環境Naviデータの横断分析で、関西エリアの店舗群がリサイクル率で全国平均を20pt上回っていることを発見。国土数値情報で分析すると、近隣に食品リサイクル施設が集中していることが要因と判明。この知見をもとに関東エリアでも食品リサイクル施設との提携を進め、チェーン全体のリサイクル率を62%→78%に改善。また、環境Naviデータの全拠点自動集計で、ESG報告書の廃棄物データ作成期間が2か月→3日に大幅短縮された。</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- Summary Matrix Table -->
@@ -1161,6 +1617,10 @@
           <th>04 災害<br>シミュレーション</th>
           <th>05 文化財<br>保全連携</th>
           <th>06 ナレッジ<br>ハブ</th>
+          <th style="background:#e8f5f8;color:#0d4a5a;">07 排出量<br>AI予測</th>
+          <th style="background:#e8f5f8;color:#0d4a5a;">08 フード<br>ロスゼロ</th>
+          <th style="background:#e8f5f8;color:#0d4a5a;">09 計量×<br>マニフェスト</th>
+          <th style="background:#e8f5f8;color:#0d4a5a;">10 多拠点<br>ベンチマーク</th>
         </tr>
       </thead>
       <tbody>
@@ -1168,6 +1628,7 @@
           <td>① ColBase（文化財）</td>
           <td></td><td></td><td></td><td></td>
           <td class="ds-check">●</td><td></td>
+          <td></td><td></td><td></td><td></td>
         </tr>
         <tr>
           <td>② 国会図書館書誌</td>
@@ -1175,17 +1636,25 @@
           <td class="ds-check">●</td>
           <td></td><td></td>
           <td class="ds-check">●</td>
+          <td></td><td></td><td></td><td></td>
         </tr>
         <tr>
           <td>③ 国土数値情報（GIS）</td>
           <td class="ds-check">●</td><td></td><td></td>
           <td class="ds-check">●</td>
           <td class="ds-check">●</td><td></td>
+          <td></td><td></td>
+          <td class="ds-check">●</td>
+          <td class="ds-check">●</td>
         </tr>
         <tr>
           <td>④ e-Stat（統計）</td>
           <td class="ds-check">●</td><td></td><td></td>
           <td class="ds-check">●</td><td></td>
+          <td class="ds-check">●</td>
+          <td class="ds-check">●</td>
+          <td class="ds-check">●</td>
+          <td></td>
           <td class="ds-check">●</td>
         </tr>
         <tr>
@@ -1195,11 +1664,17 @@
           <td class="ds-check">●</td>
           <td></td><td></td>
           <td class="ds-check">●</td>
+          <td></td>
+          <td class="ds-check">●</td>
+          <td></td><td></td>
         </tr>
         <tr>
           <td>⑥ 気象庁データ</td>
           <td class="ds-check">●</td><td></td><td></td>
           <td class="ds-check">●</td><td></td><td></td>
+          <td class="ds-check">●</td>
+          <td class="ds-check">●</td>
+          <td></td><td></td>
         </tr>
         <tr>
           <td>⑦ J-PlatPat（特許）</td>
@@ -1207,6 +1682,7 @@
           <td class="ds-check">●</td>
           <td></td><td></td><td></td>
           <td class="ds-check">●</td>
+          <td></td><td></td><td></td><td></td>
         </tr>
         <tr>
           <td>⑧ e-Gov法令検索</td>
@@ -1216,16 +1692,30 @@
           <td></td>
           <td class="ds-check">●</td>
           <td class="ds-check">●</td>
+          <td></td><td></td>
+          <td class="ds-check">●</td>
+          <td></td>
         </tr>
         <tr>
           <td>⑨ 基盤地図情報（防災）</td>
           <td class="ds-check">●</td><td></td><td></td>
           <td class="ds-check">●</td><td></td><td></td>
+          <td></td><td></td><td></td>
+          <td class="ds-check">●</td>
         </tr>
         <tr>
           <td>⑩ 文化遺産オンライン</td>
           <td></td><td></td><td></td><td></td>
           <td class="ds-check">●</td><td></td>
+          <td></td><td></td><td></td><td></td>
+        </tr>
+        <tr style="background:#f0fbfd;">
+          <td><strong style="color:#0d6070;">⑪ 環境Navi実績データ</strong><br><small style="color:#6a8a88;">（自社クラウド蓄積データ）</small></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td>
+          <td class="ds-check" style="color:#0d6070;">●</td>
+          <td class="ds-check" style="color:#0d6070;">●</td>
+          <td class="ds-check" style="color:#0d6070;">●</td>
+          <td class="ds-check" style="color:#0d6070;">●</td>
         </tr>
       </tbody>
     </table>
