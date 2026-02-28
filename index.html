@@ -3,13 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HomePage</title>
+  <title>HomePage — 真庭謙太郎</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Helvetica Neue", Arial, "Hiragino Sans", sans-serif;
+      background: #0f0f0f;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.4rem;
+      color: #fff;
+    }
+    .subtitle {
+      font-size: 0.85rem;
+      color: #888;
+      letter-spacing: 0.08em;
+      margin-bottom: 3rem;
+    }
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 480px;
+    }
+    nav a {
+      display: block;
+      padding: 1rem 1.5rem;
+      border: 1px solid #333;
+      border-radius: 6px;
+      color: #e0e0e0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    nav a:hover {
+      background: #1a1a1a;
+      border-color: #555;
+    }
+    nav a span {
+      display: block;
+      font-size: 0.75rem;
+      color: #666;
+      margin-top: 0.3rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.75rem;
+      color: #555;
+      letter-spacing: 0.05em;
+    }
+  </style>
 </head>
 <body>
-  <h1>HomePage</h1>
-  <ul>
-    <li><a href="mashup_concept_v2.html">資源と人を未来につなぐ — データマッシュアップ構想 v2</a></li>
-    <li><a href="mashup_infographic.html">資源と人を未来につなぐには？｜データマッシュアップ構想（No.1-10）</a></li>
-  </ul>
+  <main>
+    <h1>HomePage</h1>
+    <p class="subtitle">Kentaro Maniwa</p>
+    <nav>
+      <a href="mashup_concept_v2.html">
+        データマッシュアップ構想 v2
+        <span>資源と人を未来につなぐ — 公的データ × 廃棄物処理 サービス構想</span>
+      </a>
+      <a href="mashup_infographic.html">
+        データマッシュアップ構想（No.1-10）
+        <span>資源と人を未来につなぐには？</span>
+      </a>
+    </nav>
+  </main>
+  <footer>&copy; 2025 Kentaro Maniwa. All rights reserved.</footer>
 </body>
 </html>
