@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HomePage — 真庭謙太郎</title>
+  <link rel="icon" href="kenaro_favicon_final.ico" type="image/x-icon">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -22,11 +23,21 @@
       justify-content: center;
       padding: 3rem 1.5rem;
     }
+    .site-title {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.4rem;
+    }
+    .site-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
     h1 {
       font-size: 2rem;
       font-weight: 300;
       letter-spacing: 0.15em;
-      margin-bottom: 0.4rem;
       color: #fff;
     }
     .subtitle {
@@ -107,7 +118,10 @@
 </head>
 <body>
   <main>
-    <h1>HomePage</h1>
+    <div class="site-title">
+      <img src="kenaro_homepage_icon_final.png" alt="KM" class="site-icon">
+      <h1>HomePage</h1>
+    </div>
     <p class="subtitle">Kentaro Maniwa</p>
     <nav>
       <a href="mashup_concept_v2.html">
