@@ -3,148 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HomePage — 真庭謙太郎</title>
-  <link rel="icon" href="kenaro_icon_clean.png" type="image/png">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: "Helvetica Neue", Arial, "Hiragino Sans", sans-serif;
-      background: #0f0f0f;
-      color: #e0e0e0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 3rem 1.5rem;
-    }
-    .site-title {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      margin-bottom: 0.4rem;
-    }
-    .site-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-    }
-    h1 {
-      font-size: 2rem;
-      font-weight: 300;
-      letter-spacing: 0.15em;
-      color: #fff;
-    }
-    .subtitle {
-      font-size: 0.85rem;
-      color: #888;
-      letter-spacing: 0.08em;
-      margin-bottom: 3rem;
-    }
-    nav {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      width: 100%;
-      max-width: 480px;
-    }
-    nav a {
-      display: block;
-      padding: 1rem 1.5rem;
-      border: 1px solid #333;
-      border-radius: 6px;
-      color: #e0e0e0;
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: background 0.2s, border-color 0.2s;
-    }
-    nav a:hover {
-      background: #1a1a1a;
-      border-color: #555;
-    }
-    nav a span {
-      display: block;
-      font-size: 0.75rem;
-      color: #666;
-      margin-top: 0.3rem;
-    }
-    nav a .date {
-      display: block;
-      text-align: right;
-      font-size: 0.7rem;
-      color: #555;
-      margin-top: 0.5rem;
-    }
-    .history {
-      margin-top: 2.5rem;
-      width: 100%;
-      max-width: 480px;
-    }
-    .history-title {
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      color: #555;
-      text-transform: uppercase;
-      margin-bottom: 0.6rem;
-    }
-    .history-list {
-      list-style: none;
-      border-left: 1px solid #2a2a2a;
-      padding-left: 1rem;
-    }
-    .history-list li {
-      font-size: 0.78rem;
-      color: #666;
-      line-height: 1.6;
-      padding: 0.3rem 0;
-    }
-    .history-list li time {
-      color: #555;
-      margin-right: 0.5rem;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.75rem;
-      color: #555;
-      letter-spacing: 0.05em;
-    }
-  </style>
+  <title>Kenaro Concept Portfolio | 真庭謙太郎</title>
+  <meta name="description" content="真庭謙太郎による、サステナビリティ・廃棄物処理・公的データ活用のコンセプトポートフォリオ。まずはデータマッシュアップ構想 v2 をご覧ください。">
+  <link rel="icon" href="kenaro_favicon_final.ico" type="image/x-icon">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <main>
-    <div class="site-title">
-      <img src="kenaro_icon_clean.png" alt="KM" class="site-icon">
-      <h1>HomePage</h1>
+  <header class="site-header">
+    <div class="site-shell site-header-inner">
+      <a class="brand" href="index.html" aria-label="トップページへ戻る">
+        <img src="kenaro_homepage_icon_final.png" alt="Kenaro ロゴ" class="brand-icon">
+        <span>
+          <span class="brand-name">Kenaro Concept</span>
+          <br>
+          <span class="brand-sub">Kentaro Maniwa</span>
+        </span>
+      </a>
     </div>
-    <p class="subtitle">Kentaro Maniwa</p>
-    <nav>
-      <a href="mashup_concept_v2.html">
-        データマッシュアップ構想 v2
-        <span>資源と人を未来につなぐ — 公的データ × 廃棄物処理 サービス構想</span>
-        <span class="date">2026.02.28</span>
-      </a>
-      <a href="mashup_infographic.html">
-        データマッシュアップ構想（No.1-10）
-        <span>資源と人を未来につなぐには？</span>
-        <span class="date">2026.02.28</span>
-      </a>
-    </nav>
-    <div class="history">
-      <p class="history-title">更新履歴</p>
-      <ul class="history-list">
-        <li><time>2026.03.01</time>KMアイコン・favicon追加 — ホームページにKMロゴアイコンを配置、全ページにfaviconを設定</li>
-        <li><time>2026.02.28</time>環境Navi実績データ連携サービス追加 — 寺岡精工「環境Naviクラウド版」の廃棄物計量実績データ×公的データのマッシュアップサービス（Service 07〜10）を新規追加</li>
-        <li><time>2026.02.28</time>電子マニフェスト新仕様（JWNET EDI項目追加）対応 — Service 03 にJWNET再資源化等情報・D62レイアウト（52項目）・新EDI機能番号（1501/1601/2001等）を反映</li>
-        <li><time>2026.02.27</time>初版公開</li>
-      </ul>
+  </header>
+
+  <main class="home-main" aria-labelledby="site-overview-title">
+    <div class="site-shell">
+      <section class="hero" aria-label="サイト概要">
+        <h1 id="site-overview-title">資源と人を未来につなぐための<br>データマッシュアップ構想</h1>
+        <p>
+          本サイトは、廃棄物処理と公的データを接続し、排出事業者・処理業者・地域社会の意思決定を高度化するための
+          コンセプト提案をまとめた静的ポートフォリオです。最初に読むページとして、構想全体を整理した「データマッシュアップ構想 v2」を公開しています。
+        </p>
+        <div class="hero-badges" aria-label="テーマ">
+          <span class="badge">Sustainability</span>
+          <span class="badge">Waste Management</span>
+          <span class="badge">Public Data Mashup</span>
+          <span class="badge">Concept Portfolio</span>
+        </div>
+      </section>
+
+      <section aria-labelledby="published-title">
+        <h2 id="published-title" class="section-title">公開中のメイン提案</h2>
+        <div class="card-grid">
+          <a class="card-link" href="mashup_concept_v2.html" aria-describedby="concept-v2-meta">
+            <h3>データマッシュアップ構想 v2</h3>
+            <p>公的データ × 廃棄物処理の10サービスを、目的・対象・価値で体系化したメインページ。</p>
+            <p id="concept-v2-meta" class="card-meta">推奨読了順: このページを最初にご覧ください | 最終更新: 2026-02-28</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="callout" aria-label="公開ポリシー">
+        <p>
+          <strong>公開ポリシー:</strong> 「mashup_infographic.html」は再設計中のドラフトとしてリポジトリ内に保持し、現時点では公開ナビゲーションから除外しています。
+        </p>
+      </section>
+
+      <section class="history" aria-labelledby="history-title">
+        <h2 id="history-title" class="section-title">更新履歴</h2>
+        <ul class="history-list">
+          <li><time datetime="2026-03-08">2026-03-08</time> 更新履歴セクションを追記し、公開ページの変更トラッキングを明確化。</li>
+          <li><time datetime="2026-03-08">2026-03-08</time> ランディングページ構成を改善し、共通CSSを導入。インフォグラフィックページを公開導線から除外。</li>
+          <li><time datetime="2026-03-01">2026-03-01</time> KMロゴアイコンとfaviconを追加。</li>
+          <li><time datetime="2026-02-28">2026-02-28</time> 環境Navi実績データ連携サービス（Service 07-10）を追加。</li>
+          <li><time datetime="2026-02-27">2026-02-27</time> 初版公開。</li>
+        </ul>
+      </section>
     </div>
   </main>
-  <footer>&copy; 2025 Kentaro Maniwa. All rights reserved.</footer>
+
+  <footer class="page-footer">
+    <div class="site-shell">
+      <small>&copy; 2026 Kentaro Maniwa. All rights reserved.</small>
+    </div>
+  </footer>
 </body>
 </html>
